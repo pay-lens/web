@@ -1,0 +1,77 @@
+{
+    "extends": ["airbnb", "plugin:react/recommended", "plugin:prettier/recommended", "prettier", "prettier/react", "plugin:jsx-a11y/recommended"],
+    "plugins": ["jest", "react", "react-hooks", "prettier", "jsx-a11y"],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        // Stylistic Issues
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "ignore",
+                "exports": "always-multiline",
+                "functions": "ignore"
+            }
+        ],
+        "comma-spacing": [
+            "error",
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "newline-before-return": "error",
+        "no-bitwise": "off",
+        "no-mixed-operators": "off",
+        "no-nested-ternary": "off",
+        "no-plusplus": "off",
+        "no-trailing-spaces": "error",
+        "object-curly-spacing": ["error", "always"],
+        "quotes": ["error", "single"],
+
+        // ECMAScript 6
+        "arrow-parens": ["error", "always"],
+        "arrow-spacing": "error",
+        "arrow-body-style": ["error", "as-needed"],
+        "no-duplicate-imports": "error",
+        "no-useless-constructor": "error",
+
+        // React
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/jsx-props-no-spreading": "off",
+
+        // Import
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ],
+        "import/prefer-default-export": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"]
+            }
+        }
+    }
+}

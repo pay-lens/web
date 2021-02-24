@@ -1,0 +1,6 @@
+src/serviceWorker.js
+src/demo/serviceWorker.js
+node_modules/*
+public/*
+build/*
+config/*
