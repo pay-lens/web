@@ -39,6 +39,9 @@ context.generated.tfvars
 .vscode
 .npmrc
 
+# next.js build output
+.next
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
