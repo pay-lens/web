@@ -84,11 +84,11 @@ const StyledIcon = styled(SvgIcon)`
     const dimensions = numToPx(size);
 
     return `
-            height: ${dimensions || '5px'};
-            min-height: ${dimensions || '5px'};
-            min-width: ${dimensions || '5px'};
-            width: ${dimensions || 'auto'};
-        `;
+      height: ${dimensions || '5px'};
+      min-height: ${dimensions || '5px'};
+      min-width: ${dimensions || '5px'};
+      width: ${dimensions || 'auto'};
+    `;
   }}
 `;
 

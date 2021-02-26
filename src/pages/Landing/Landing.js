@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Button from '../../components/Button/Button';
 
+import MapIcon from '../../components/icons/custom/Map/Map';
+
 import { pxToEm } from '../../styles/utils/converters';
 
 const Landing = styled.main`
@@ -30,6 +32,7 @@ const LandingPage = () => (
 
       <ul>
         <li>
+          <MapIcon />
           <p>Explore salaries across companies, jobs, and locations (U.S.)</p>
         </li>
         <li>
