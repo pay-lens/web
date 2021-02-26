@@ -8,7 +8,7 @@ const ButtonBase = styled.button`
   border-radius: 2px;
   font-weight: 500;
   height: ${pxToEm(44)};
-  padding: 0 ${pxToEm(10)};
+  padding: 0 ${pxToEm(22)};
 `;
 
 const PrimaryButton = styled(ButtonBase)`

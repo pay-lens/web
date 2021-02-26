@@ -21,30 +21,63 @@ import colors from '../../styles/colorPalette';
 
 const Landing = styled.main`
   section {
-    padding: 0 15vw ${pxToEm(150)};
+    padding: ${pxToEm(100)} 15vw ${pxToEm(100)};
 
     :first-child {
-      padding-top: ${pxToEm(150)};
-      position: relative;
       color: ${colors.text.white.hex};
+      padding-top: ${pxToEm(100)};
+      padding-bottom: ${pxToEm(150)};
+      position: relative;
+
+      h1,
+      h2 {
+        margin-bottom: 0.5em;
+      }
 
       ::after {
-        width: 100vw;
-        height: 105%;
+        background: ${colors.midnightGreenEagle.hex};
+        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.75);
+        content: "";
+        height: 115%;
+        left: 0;
         position: absolute;
         top: 0;
-        left: 0;
-        background: ${colors.midnightGreenEagle.hex};
-        content: "";
-        z-index: -1;
         transform-origin: center;
         transform: skewY(4deg) translateY(-15%);
+        width: 100vw;
+        z-index: -1;
+      }
+
+      svg * {
+        fill: ${colors.text.white.hex};
+      }
+    }
+
+    :nth-child(4) {
+      color: ${colors.text.white.hex};
+      position: relative;
+
+      ::after {
+        background: ${colors.blueNcs.hex};
         box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.75);
+        content: "";
+        height: 200%;
+        left: 0;
+        position: absolute;
+        bottom: -16%;
+        transform-origin: center;
+        transform: skewX(-66deg) translate(34vw, -8%);
+        width: 130vw;
+        z-index: -1;
+      }
+
+      svg * {
+        fill: ${colors.text.white.hex};
       }
     }
 
     :nth-child(even):not(:last-child) {
-      transform: translateX(35vw);
+      padding-left: 50vw;
     }
 
     > header {
