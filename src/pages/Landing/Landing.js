@@ -3,16 +3,91 @@ import styled from 'styled-components';
 
 import Button from '../../components/Button/Button';
 
+import AimIcon from '../../components/icons/custom/Aim/Aim';
+import CheckIcon from '../../components/icons/custom/Check/Check';
+import ClipboardIcon from '../../components/icons/custom/Clipboard/Clipboard';
+import CloudIcon from '../../components/icons/custom/Cloud/Cloud';
+import DiamondIcon from '../../components/icons/custom/Diamond/Diamond';
+import DollarsIcon from '../../components/icons/custom/Dollars/Dollars';
+import HandshakeIcon from '../../components/icons/custom/Handshake/Handshake';
 import MapIcon from '../../components/icons/custom/Map/Map';
+import MindIcon from '../../components/icons/custom/Mind/Mind';
+import MoneyMessageIcon from '../../components/icons/custom/MoneyMessage/MoneyMessage';
+import ProfileIcon from '../../components/icons/custom/Profile/Profile';
+import ResumeIcon from '../../components/icons/custom/Resume/Resume';
 
 import { pxToEm } from '../../styles/utils/converters';
+import colors from '../../styles/colorPalette';
 
 const Landing = styled.main`
-  padding: 0 15vw;
-
   section {
-    padding: ${pxToEm(50)} 0;
+    padding: 0 15vw ${pxToEm(150)};
+
+    :first-child {
+      padding-top: ${pxToEm(150)};
+      position: relative;
+      color: ${colors.text.white.hex};
+
+      ::after {
+        width: 100vw;
+        height: 105%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: ${colors.midnightGreenEagle.hex};
+        content: "";
+        z-index: -1;
+        transform-origin: center;
+        transform: skewY(4deg) translateY(-15%);
+        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.75);
+      }
+    }
+
+    :nth-child(even):not(:last-child) {
+      transform: translateX(35vw);
+    }
+
+    > header {
+      margin-bottom: ${pxToEm(30)};
+    }
   }
+`;
+
+const IconBulletList = styled.ul`
+  li {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: ${pxToEm(20)};
+    }
+  }
+
+  svg {
+    height: ${pxToEm(30)};
+    margin-right: ${pxToEm(10)};
+    max-width: 85%;
+    width: auto;
+
+    * {
+      fill: ${colors.text.black.hex};
+    }
+  }
+`;
+
+const ButtonGroup = styled.div`
+  margin-top: ${pxToEm(30)};
+
+  > button:not(:first-child) {
+    margin-left: ${pxToEm(50)};
+  }
+`;
+
+const IconContainer = styled.div`
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: ${pxToEm(60)};
 `;
 
 const LandingPage = () => (
@@ -22,98 +97,153 @@ const LandingPage = () => (
       <h2>Your personal career advisor</h2>
       <h3>Get paid what you're worth, increase your value, discover new jobs.</h3>
 
-      <Button variant="primary" type="button">
-        Get Started
-      </Button>
+      <ButtonGroup>
+        <Button variant="primary" type="button">
+          Get Started
+        </Button>
+      </ButtonGroup>
     </section>
 
     <section>
-      <h1>Salaries</h1>
+      <header>
+        <h1>Salaries</h1>
+      </header>
 
-      <ul>
+      <IconBulletList>
         <li>
-          <MapIcon />
+          <IconContainer>
+            <MapIcon />
+          </IconContainer>
           <p>Explore salaries across companies, jobs, and locations (U.S.)</p>
         </li>
         <li>
+          <IconContainer>
+            <MindIcon />
+          </IconContainer>
           <p>Access insightful market data on companies and jobs</p>
         </li>
         <li>
+          <IconContainer>
+            <CloudIcon />
+          </IconContainer>
           <p>Data sourced from employees, companies and recruiters</p>
         </li>
-      </ul>
+      </IconBulletList>
 
-      <Button variant="secondary" type="button">
-        Sign Up
-      </Button>
+      <ButtonGroup>
+        <Button variant="secondary" type="button">
+          Sign Up
+        </Button>
+      </ButtonGroup>
     </section>
 
     <section>
-      <h1>Your Worth</h1>
+      <header>
+        <h1>Your Worth</h1>
+      </header>
 
-      <ul>
+      <IconBulletList>
         <li>
+          <IconContainer>
+            <ProfileIcon />
+          </IconContainer>
           <p>Get your personalized salary report card</p>
         </li>
         <li>
+          <IconContainer>
+            <DiamondIcon />
+          </IconContainer>
           <p>Compare your market value based on people like you</p>
         </li>
         <li>
+          <IconContainer>
+            <HandshakeIcon />
+          </IconContainer>
           <p>Get help with negotiating a raise, offer, or find a job</p>
         </li>
-      </ul>
+      </IconBulletList>
 
-      <Button variant="secondary" type="button">
-        Sign Up
-      </Button>
+      <ButtonGroup>
+        <Button variant="secondary" type="button">
+          Sign Up
+        </Button>
+      </ButtonGroup>
     </section>
 
     <section>
-      <h1>JobSense</h1>
+      <header>
+        <h1>JobSense</h1>
+      </header>
 
-      <ul>
+      <IconBulletList>
         <li>
+          <IconContainer>
+            <AimIcon />
+          </IconContainer>
           <p>Get matched to jobs that fit your skills</p>
         </li>
         <li>
+          <IconContainer>
+            <DollarsIcon />
+          </IconContainer>
           <p>See what you would earn for every job listing</p>
         </li>
         <li>
+          <IconContainer>
+            <ResumeIcon />
+          </IconContainer>
           <p>Just upload your resume, and we'll match jobs to you</p>
         </li>
-      </ul>
+      </IconBulletList>
 
-      <Button variant="primary" type="button">
-        Sign Up
-      </Button>
+      <ButtonGroup>
+        <Button variant="primary" type="button">
+          Sign Up
+        </Button>
+      </ButtonGroup>
     </section>
 
     <section>
-      <h1>Raises and Offers</h1>
+      <header>
+        <h1>Raises and Offers</h1>
+      </header>
 
-      <ul>
+      <IconBulletList>
         <li>
+          <IconContainer>
+            <CheckIcon />
+          </IconContainer>
           <p>Find out if you’re due for a raise or promotion</p>
         </li>
         <li>
+          <IconContainer>
+            <ClipboardIcon />
+          </IconContainer>
           <p>Evaluate an offer (or compare multiple offers)</p>
         </li>
         <li>
+          <IconContainer>
+            <MoneyMessageIcon />
+          </IconContainer>
           <p>Get help with negotiating more money</p>
         </li>
-      </ul>
+      </IconBulletList>
 
-      <Button variant="secondary" type="button">
-        Get a Raise
-      </Button>
+      <ButtonGroup>
+        <Button variant="secondary" type="button">
+          Get a Raise
+        </Button>
 
-      <Button variant="secondary" type="button">
-        Evaluate an Offer
-      </Button>
+        <Button variant="secondary" type="button">
+          Evaluate an Offer
+        </Button>
+      </ButtonGroup>
     </section>
 
     <section>
-      <h1>Understand Your Worth</h1>
+      <header>
+        <h1>Understand Your Worth</h1>
+      </header>
 
       <p>
         Research salaries by company, job title and location. Sign up with WorthAware to get a personalized review of your worth and get matched to

@@ -19,13 +19,23 @@ const colors = {
     hex: '#073B4C',
     rgb: '7, 59, 76',
   },
+  black: {
+    hex: '#000026',
+    rgb: '0, 0, 38',
+  },
   white: {
     hex: '#FFF',
     rgb: '255, 255, 255',
   },
-  blackText: {
-    hex: '#4d5156',
-    rgb: '77, 81, 86',
+  text: {
+    black: {
+      hex: '#4d5156',
+      rgb: '77, 81, 86',
+    },
+    white: {
+      hex: '#FFF',
+      rgb: '255, 255, 255',
+    },
   },
 };
 
