@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
+import Search from '../Search/Search';
 
 import { pxToEm } from '../../styles/utils/converters';
 import colors from '../../styles/colorPalette';
@@ -49,31 +50,6 @@ const Nav = styled.nav`
   }
 `;
 
-const Search = styled.input`
-  background: transparent;
-  border: 1px solid ${colors.white.hex};
-  border-radius: 2px;
-  box-sizing: border-box;
-  height: ${pxToEm(44)};
-  width: 20vw;
-
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  ::placeholder {
-    color: ${colors.white.hex};
-    opacity: 1; /* Firefox */
-  }
-
-  /* Internet Explorer 10-11 */
-  :-ms-input-placeholder {
-    color: ${colors.white.hex};
-  }
-
-  /* Microsoft Edge */
-  ::-ms-input-placeholder {
-    color: ${colors.white.hex};
-  }
-`;
-
 const ButtonGroup = styled.div`
   button {
     border-radius: 2px;
@@ -106,7 +82,7 @@ const GlobalHeader = () => (
         </ul>
       </Nav>
 
-      <Search type="text" placeholder="Search Salaries" />
+      <Search placeholder="Search Salaries" />
 
       <ButtonGroup>
         <Button variant="primary" type="button">

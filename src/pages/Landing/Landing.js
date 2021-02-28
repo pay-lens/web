@@ -1,12 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import Button from '../../components/Button/Button';
+import Search from '../../components/Search/Search';
 
 import AimIcon from '../../components/icons/custom/Aim/Aim';
 import CheckIcon from '../../components/icons/custom/Check/Check';
 import ClipboardIcon from '../../components/icons/custom/Clipboard/Clipboard';
-import CloudIcon from '../../components/icons/custom/Cloud/Cloud';
+import CloudComputingIcon from '../../components/icons/custom/CloudComputing/CloudComputing';
 import DiamondIcon from '../../components/icons/custom/Diamond/Diamond';
 import DollarsIcon from '../../components/icons/custom/Dollars/Dollars';
 import HandshakeIcon from '../../components/icons/custom/Handshake/Handshake';
@@ -36,7 +36,7 @@ const Landing = styled.main`
 
       ::after {
         background: ${colors.midnightGreenEagle.hex};
-        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.75);
+        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
         content: "";
         height: 115%;
         left: 0;
@@ -59,7 +59,7 @@ const Landing = styled.main`
 
       ::after {
         background: ${colors.blueNcs.hex};
-        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.75);
+        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
         content: "";
         height: 200%;
         left: 0;
@@ -157,7 +157,7 @@ const LandingPage = () => (
         </li>
         <li>
           <IconContainer>
-            <CloudIcon />
+            <CloudComputingIcon />
           </IconContainer>
           <p>Data sourced from employees, companies and recruiters</p>
         </li>
@@ -284,7 +284,7 @@ const LandingPage = () => (
       </p>
 
       <form>
-        <input type="text" />
+        <Search color={colors.text.black.hex} placeholder='Search Salaries' />
         <Button variant="secondary" type="submit">
           Search
         </Button>
