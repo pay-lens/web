@@ -16,6 +16,15 @@ const Header = styled.header`
   height: ${pxToEm(50)};
   justify-content: space-between;
   padding: 0 15vw;
+  transition: padding 0.3s ease;
+
+  @media only screen and (max-width: 850px) {
+    padding: 0 10vw;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0 5vw;
+  }
 `;
 
 const StyledLogo = styled.a`

@@ -15,11 +15,16 @@ const Footer = styled.footer`
     "privacy privacy";
   grid-template-columns: 155px auto;
   padding: ${pxToEm(20)} 15vw ${pxToEm(50)};
+  transition: padding 0.3s ease;
 
   a {
     display: inline-block;
     color: ${colors.white.hex};
     padding: ${pxToEm(3)};
+  }
+
+  @media only screen and (max-width: 850px) {
+    padding: ${pxToEm(20)} 10vw ${pxToEm(50)};
   }
 
   @media only screen and (max-width: 750px) {
@@ -28,6 +33,10 @@ const Footer = styled.footer`
       "nav"
       "privacy";
     grid-template-columns: auto;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: ${pxToEm(20)} 5vw ${pxToEm(50)};
   }
 `;
 

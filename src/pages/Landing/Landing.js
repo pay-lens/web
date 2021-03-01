@@ -21,7 +21,8 @@ import colors from '../../styles/colorPalette';
 
 const Landing = styled.main`
   section {
-    padding: ${pxToEm(100)} 15vw ${pxToEm(100)};
+    padding: ${pxToEm(100)} 15vw;
+    transition: padding 0.3s ease;
 
     :first-child {
       color: ${colors.text.white.hex};
@@ -103,6 +104,12 @@ const Landing = styled.main`
 
   @media only screen and (max-width: 850px) {
     section {
+      padding: ${pxToEm(100)} 10vw;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    section {
       :nth-child(even):not(:last-child) {
         padding-left: 15vw;
       }
@@ -115,6 +122,12 @@ const Landing = styled.main`
       :last-child form {
         padding: 0;
       }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    section {
+      padding: ${pxToEm(100)} 5vw;
     }
   }
 `;
