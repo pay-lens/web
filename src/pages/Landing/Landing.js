@@ -67,7 +67,8 @@ const Landing = styled.main`
         bottom: -16%;
         transform-origin: center;
         transform: skewX(-66deg) translate(34vw, -8%);
-        width: 130vw;
+        transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+        width: ${pxToEm(2000)};
         z-index: -1;
       }
 
@@ -82,6 +83,38 @@ const Landing = styled.main`
 
     > header {
       margin-bottom: ${pxToEm(30)};
+    }
+
+    :last-child {
+      form {
+        display: flex;
+        justify-content: center;
+        margin-top: ${pxToEm(30)};
+        padding: 0 10%;
+        transition: padding 0.3s ease;
+
+        > div:first-child {
+          flex-grow: 1;
+          margin-right: ${pxToEm(20)};
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    section {
+      :nth-child(even):not(:last-child) {
+        padding-left: 15vw;
+      }
+
+      :nth-child(4)::after {
+        height: 250%;
+        transform: skewX(-75deg) translate(38rem,-12%);
+      }
+
+      :last-child form {
+        padding: 0;
+      }
     }
   }
 `;
@@ -284,7 +317,7 @@ const LandingPage = () => (
       </p>
 
       <form>
-        <Search color={colors.text.black.hex} placeholder='Search Salaries' />
+        <Search color={colors.text.black.hex} placeholder='Search by company, title, and/or location' />
         <Button variant="secondary" type="submit">
           Search
         </Button>

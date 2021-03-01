@@ -9,8 +9,30 @@ import colors from '../../styles/colorPalette';
 const Footer = styled.footer`
   background: ${colors.midnightGreenEagle.hex};
   color: ${colors.white.hex};
-  display: flex;
+  display: grid;
+  grid-template-areas:
+    "logo nav"
+    "privacy privacy";
+  grid-template-columns: 155px auto;
   padding: ${pxToEm(20)} 15vw ${pxToEm(50)};
+
+  a {
+    display: inline-block;
+    color: ${colors.white.hex};
+    padding: ${pxToEm(3)};
+  }
+
+  @media only screen and (max-width: 750px) {
+    grid-template-areas:
+      "logo"
+      "nav"
+      "privacy";
+    grid-template-columns: auto;
+  }
+`;
+
+const LogoWrapper = styled.div`
+  grid-area: logo;
 `;
 
 const StyledLogo = styled(Logo)`
@@ -24,6 +46,7 @@ const StyledLogo = styled(Logo)`
 
 const Nav = styled.nav`
   display: flex;
+  grid-area: nav;
 
   ul {
     margin-left: ${pxToEm(50)};
@@ -37,21 +60,40 @@ const Nav = styled.nav`
     }
   }
 
-  a {
-    display: inline-block;
-    color: ${colors.white.hex};
-    padding: ${pxToEm(3)};
+  @media only screen and (max-width: 750px) {
+    flex-direction: column;
+
+    ul {
+      margin: ${pxToEm(30)} 0 0;
+    }
+  }
+`;
+
+const NoticeList = styled.ul`
+  align-content: center;
+  align-items: center;
+  border-top: 1px solid ${colors.white.hex};
+  display: flex;
+  font-size: ${pxToEm(12)};
+  grid-area: privacy;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 700px) {
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 `;
 
 const GlobalFooter = () => (
   <Footer>
-    <div>
+    <LogoWrapper>
       <a href="/">
         <StyledLogo />
       </a>
       <h1 className="sr-only">WorthAware</h1>
-    </div>
+    </LogoWrapper>
 
     <Nav>
       <ul>
@@ -99,6 +141,14 @@ const GlobalFooter = () => (
         </li>
       </ul>
     </Nav>
+
+    <NoticeList>
+      <li><a href="">Privacy</a></li>
+      <li><a href="">Terms</a></li>
+      <li><a href="">Cookie Notice</a></li>
+      <li><a href="">Sitemap</a></li>
+      <li>Support: paysa.support@ceridian.com</li>
+    </NoticeList>
   </Footer>
 );
 

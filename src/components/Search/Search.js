@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Button from '../Button/Button';
 import SearchIcon from '../icons/custom/Search/Search';
 
 import { pxToEm } from '../../styles/utils/converters';
@@ -49,12 +48,13 @@ const SearchWrapper = styled.div`
 
 const Input = styled.input`
   background: transparent;
-  border: 1px solid;
+  border: none;
+  border-bottom: 1px solid;
   border-radius: 2px;
   box-sizing: border-box;
   padding-left: ${pxToEm(44)};
   height: ${pxToEm(44)};
-  width: 20vw;
+  width: 100%;
 `;
 
 const Search = ({ color, ...rest }) => (
