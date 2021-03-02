@@ -19,115 +19,120 @@ import ResumeIcon from '../../components/icons/custom/Resume/Resume';
 import { pxToEm } from '../../styles/utils/converters';
 import colors from '../../styles/colorPalette';
 
-const Landing = styled.main`
-  section {
-    padding: ${pxToEm(100)} 15vw;
-    transition: padding 0.3s ease;
+const Section = styled.section`
+  padding: ${pxToEm(100)} 15vw;
+  transition: padding 0.3s ease;
 
-    :first-child {
-      color: ${colors.text.white.hex};
-      padding-top: ${pxToEm(100)};
-      padding-bottom: ${pxToEm(150)};
-      position: relative;
-
-      h1,
-      h2 {
-        margin-bottom: 0.5em;
-      }
-
-      ::after {
-        background: ${colors.midnightGreenEagle.hex};
-        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
-        content: "";
-        height: 115%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        transform-origin: center;
-        transform: skewY(4deg) translateY(-15%);
-        width: 100vw;
-        z-index: -1;
-      }
-
-      svg * {
-        fill: ${colors.text.white.hex};
-      }
-    }
-
-    :nth-child(4) {
-      color: ${colors.text.white.hex};
-      position: relative;
-
-      ::after {
-        background: ${colors.blueNcs.hex};
-        box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
-        content: "";
-        height: 200%;
-        left: 0;
-        position: absolute;
-        bottom: -16%;
-        transform-origin: center;
-        transform: skewX(-66deg) translate(34vw, -8%);
-        transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-        width: ${pxToEm(2000)};
-        z-index: -1;
-      }
-
-      svg * {
-        fill: ${colors.text.white.hex};
-      }
-    }
-
-    :nth-child(even):not(:last-child) {
-      padding-left: 50vw;
-    }
-
-    > header {
-      margin-bottom: ${pxToEm(30)};
-    }
-
-    :last-child {
-      form {
-        display: flex;
-        justify-content: center;
-        margin-top: ${pxToEm(30)};
-        padding: 0 10%;
-        transition: padding 0.3s ease;
-
-        > div:first-child {
-          flex-grow: 1;
-          margin-right: ${pxToEm(20)};
-        }
-      }
-    }
+  :nth-child(even):not(:last-child) {
+    padding-left: 50vw;
   }
 
-  @media only screen and (max-width: 850px) {
-    section {
-      padding: ${pxToEm(100)} 10vw;
-    }
+  > header {
+    margin-bottom: ${pxToEm(30)};
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding: ${pxToEm(100)} 10vw;
   }
 
   @media only screen and (max-width: 700px) {
-    section {
-      :nth-child(even):not(:last-child) {
-        padding-left: 15vw;
-      }
+    :nth-child(even):not(:last-child) {
+      padding-left: 15vw;
+    }
 
-      :nth-child(4)::after {
-        height: 250%;
-        transform: skewX(-75deg) translate(38rem,-12%);
-      }
+    :nth-child(4)::after {
+      height: 250%;
+      transform: skewX(-75deg) translate(38rem,-12%);
+    }
 
-      :last-child form {
-        padding: 0;
-      }
+    :last-child form {
+      padding: 0;
     }
   }
 
   @media only screen and (max-width: 600px) {
-    section {
-      padding: ${pxToEm(100)} 5vw;
+    padding: ${pxToEm(100)} 5vw;
+  }
+`;
+
+const Cta = styled(Section)`
+  color: ${colors.text.white.hex};
+  padding-top: ${pxToEm(100)};
+  padding-bottom: ${pxToEm(150)};
+  position: relative;
+
+  h1,
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
+  ::after {
+    background: ${colors.midnightGreenEagle.hex};
+    box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
+    content: "";
+    height: 115%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform-origin: center;
+    transform: skewY(6deg) translateY(-15%);
+    width: 100vw;
+    z-index: -1;
+  }
+
+  svg * {
+    fill: ${colors.text.white.hex};
+  }
+`;
+
+const JobSenseSection = styled(Section)`
+  color: ${colors.text.white.hex};
+  position: relative;
+
+  ::after {
+    background: ${colors.blueNcs.hex};
+    box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
+    content: "";
+    height: 200%;
+    left: 0;
+    position: absolute;
+    bottom: -16%;
+    transform-origin: center;
+    transform: skewX(-66deg) translate(34vw, -8%);
+    transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    width: ${pxToEm(2000)};
+    z-index: -1;
+  }
+
+  ul li svg * {
+    fill: ${colors.text.white.hex};
+  }
+
+  @media only screen and (max-width: 700px) {
+    ::after {
+      height: 250%;
+      transform: skewX(-75deg) translate(38rem,-12%);
+    }
+  }
+`;
+
+const SearchSection = styled(Section)`
+  form {
+    display: flex;
+    justify-content: center;
+    margin-top: ${pxToEm(30)};
+    padding: 0 10%;
+    transition: padding 0.3s ease;
+
+    > div:first-child {
+      flex-grow: 1;
+      margin-right: ${pxToEm(20)};
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    form {
+      padding: 0;
     }
   }
 `;
@@ -170,8 +175,8 @@ const IconContainer = styled.div`
 `;
 
 const LandingPage = () => (
-  <Landing>
-    <section>
+  <main>
+    <Cta>
       <h1>Make the most out of your job</h1>
       <h2>Your personal career advisor</h2>
       <h3>Get paid what you're worth, increase your value, discover new jobs.</h3>
@@ -181,9 +186,9 @@ const LandingPage = () => (
           Get Started
         </Button>
       </ButtonGroup>
-    </section>
+    </Cta>
 
-    <section>
+    <Section>
       <header>
         <h1>Salaries</h1>
       </header>
@@ -214,9 +219,9 @@ const LandingPage = () => (
           Sign Up
         </Button>
       </ButtonGroup>
-    </section>
+    </Section>
 
-    <section>
+    <Section>
       <header>
         <h1>Your Worth</h1>
       </header>
@@ -247,9 +252,9 @@ const LandingPage = () => (
           Sign Up
         </Button>
       </ButtonGroup>
-    </section>
+    </Section>
 
-    <section>
+    <JobSenseSection>
       <header>
         <h1>JobSense</h1>
       </header>
@@ -280,9 +285,9 @@ const LandingPage = () => (
           Sign Up
         </Button>
       </ButtonGroup>
-    </section>
+    </JobSenseSection>
 
-    <section>
+    <Section>
       <header>
         <h1>Raises and Offers</h1>
       </header>
@@ -317,9 +322,9 @@ const LandingPage = () => (
           Evaluate an Offer
         </Button>
       </ButtonGroup>
-    </section>
+    </Section>
 
-    <section>
+    <SearchSection>
       <header>
         <h1>Understand Your Worth</h1>
       </header>
@@ -335,8 +340,8 @@ const LandingPage = () => (
           Search
         </Button>
       </form>
-    </section>
-  </Landing>
+    </SearchSection>
+  </main>
 );
 
 export default LandingPage;

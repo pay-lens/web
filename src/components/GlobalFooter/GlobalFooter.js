@@ -23,7 +23,7 @@ const Footer = styled.footer`
     padding: ${pxToEm(3)};
   }
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 1200px) {
     padding: ${pxToEm(20)} 10vw ${pxToEm(50)};
   }
 

@@ -18,7 +18,7 @@ const Header = styled.header`
   padding: 0 15vw;
   transition: padding 0.3s ease;
 
-  @media only screen and (max-width: 850px) {
+  @media only screen and (max-width: 1200px) {
     padding: 0 10vw;
   }
 
