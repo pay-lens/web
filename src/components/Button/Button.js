@@ -36,16 +36,16 @@ const SecondaryButton = styled(ButtonBase)`
 const TertiaryButton = styled(ButtonBase)`
   background: transparent;
   border: none;
-  color: ${colors.white.hex};
+  color: ${({ color }) => color || colors.white.hex};
   font-weight: 500;
 
   :hover {
     box-shadow: none;
-    background: rgba(${colors.black.rgb}, 0.25);
+    background: rgba(${colors.black.rgb}, 0.1);
   }
 `;
 
-const Button = ({ color, size, variant, ...rest }) => {
+const Button = ({ variant, ...rest }) => {
   switch (variant) {
     case 'secondary': {
       return <SecondaryButton {...rest} />;

@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 import Search from '../Search/Search';
 
 import { pxToEm } from '../../styles/utils/converters';
-import { createTransitionForProperties } from '../../styles/utils/mixins';
+import { boxShadow, createTransitionForProperties } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
 import useScroll from '../../hooks/useScroll';
@@ -15,7 +15,7 @@ import useWindowSize from '../../hooks/useWindowSize';
 const Header = styled.header`
   align-content: center;
   align-items: center;
-  background: ${colors.teal.hex};
+  background: ${({scrollY}) => (scrollY < 80) ? colors.teal.hex : colors.white.hex};
   display: flex;
   height: ${pxToEm(50)};
   justify-content: space-between;
@@ -25,7 +25,16 @@ const Header = styled.header`
   right: 0;
   top: 0;
   z-index: 401;
+  ${({scrollY}) => (scrollY >= 80) ? boxShadow() : ''};
   ${createTransitionForProperties(['padding'])};
+
+  a {
+    color: ${({scrollY}) => (scrollY < 80) ? colors.text.white.hex : colors.text.black.hex};
+  }
+
+  svg * {
+    fill: ${({scrollY}) => (scrollY < 80) ? colors.text.white.hex : colors.text.black.hex};
+  }
 
   @media only screen and (max-width: 1200px) {
     padding: ${pxToEm(15)} 10vw;
@@ -48,10 +57,6 @@ const StyledLogo = styled.a`
   svg {
     height: ${pxToEm(44)};
     width: auto;
-
-    * {
-      fill: ${colors.white.hex};
-    }
   }
 `;
 
@@ -65,7 +70,6 @@ const Nav = styled.nav`
     justify-content: space-between;
 
     a {
-      color: ${colors.white.hex};
       display: inline-block;
       line-height: ${pxToEm(50)};
       padding: 0 ${pxToEm(5)};
@@ -83,12 +87,11 @@ const ButtonGroup = styled.div`
 
 const GlobalHeader = () => {
   const { scrollY, scrollDirection } = useScroll();
-  const isScrolledDown = (scrollDirection === 'down' && scrollY > 80);
   const { width } = useWindowSize();
 
   return (
     <>
-      <Header>
+      <Header scrollDirection={scrollDirection} scrollY={scrollY}>
         <div>
           <StyledLogo href="/">
             <Logo />
@@ -112,13 +115,20 @@ const GlobalHeader = () => {
               </ul>
             </Nav>
 
-            <Search placeholder="Search Salaries" />
+            <Search
+              placeholder="Search Salaries"
+              color={(scrollY < 80) ? colors.text.white.hex : colors.text.black.hex }
+            />
 
             <ButtonGroup>
               <Button variant="primary" type="button">
                 Sign Up
               </Button>
-              <Button variant="tertiary" type="button">
+              <Button
+                color={(scrollY < 80) ? colors.text.white.hex : colors.pink.hex }
+                variant="tertiary"
+                type="button"
+              >
                 Sign In
               </Button>
             </ButtonGroup>
