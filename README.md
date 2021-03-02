@@ -1,11 +1,10 @@
 # WorthAware
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/AwareWorth?label=Follow&style=social)](https://twitter.com/AwareWorth)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/maintainability)](https://codeclimate.com/github/WorthAware/worthaware-web/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/test_coverage)](https://codeclimate.com/github/WorthAware/worthaware-web/test_coverage)
-
-[![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/WorthAware/worthaware-web?targetFile=package.json)
+| | |
+| -: | - |
+| Social | [![Twitter Follow](https://img.shields.io/twitter/follow/AwareWorth?label=Follow&style=social)](https://twitter.com/AwareWorth) |
+| CodeClimate | [![Maintainability](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/maintainability)](https://codeclimate.com/github/WorthAware/worthaware-web/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/test_coverage)](https://codeclimate.com/github/WorthAware/worthaware-web/test_coverage) |
+| Snyk | [![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/WorthAware/worthaware-web?targetFile=package.json) |
 
 ## Contents
 - [WorthAware](#worthaware)
