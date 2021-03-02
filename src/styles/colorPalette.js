@@ -8,8 +8,12 @@ const colors = {
     rgb: '255, 209, 102',
   },
   green: {
-    hex: '#06D6A0',
-    rgb: '6, 214, 160',
+    hex: '#47EFC7',
+    rgb: '71, 239, 199',
+  },
+  lightGreen: {
+    hex: '#BCF9EB',
+    rgb: '188, 249, 235',
   },
   blue: {
     hex: '#118AB2',

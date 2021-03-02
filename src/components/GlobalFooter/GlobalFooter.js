@@ -8,6 +8,7 @@ import colors from '../../styles/colorPalette';
 
 const Footer = styled.footer`
   background: ${colors.teal.hex};
+  box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
   color: ${colors.white.hex};
   display: grid;
   grid-template-areas:

@@ -1,3 +1,5 @@
+import colors from "../colorPalette";
+
 /**
  * Build a CSS transition property with all of the properties defined in the provided array.
  * property name | duration | timing function | delay
@@ -61,7 +63,7 @@ export const truncateAtWidth = (width = '100px') => {
  * @param {number|string} opacity Opacity set for box-shadow. Defaults to 0.5.
  * @return {string} Returns a box-shadow definition.
  */
-export const boxShadow = (color = '#000', offsets = ['0', '6px', '6px', 0], opacity = 0.5) =>
+export const boxShadow = (color = colors.black.rgb, offsets = ['0', '2px', '15px', '1px'], opacity = 0.5) =>
   `box-shadow: ${offsets.join(' ')} rgba(${color}, ${opacity})`;
 
 /**

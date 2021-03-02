@@ -17,6 +17,7 @@ import ProfileIcon from '../../components/icons/custom/Profile/Profile';
 import ResumeIcon from '../../components/icons/custom/Resume/Resume';
 
 import { pxToEm } from '../../styles/utils/converters';
+import { boxShadow } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
 const Section = styled.section`
@@ -68,7 +69,6 @@ const Cta = styled(Section)`
 
   ::after {
     background: ${colors.teal.hex};
-    box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
     content: "";
     height: 115%;
     left: 0;
@@ -78,6 +78,7 @@ const Cta = styled(Section)`
     transform: skewY(6deg) translateY(-15%);
     width: 100vw;
     z-index: -1;
+    ${boxShadow()};
   }
 
   svg * {
@@ -91,7 +92,6 @@ const JobSenseSection = styled(Section)`
 
   ::after {
     background: ${colors.blue.hex};
-    box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
     content: "";
     height: 200%;
     left: 0;
@@ -102,6 +102,7 @@ const JobSenseSection = styled(Section)`
     transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
     width: ${pxToEm(2000)};
     z-index: -1;
+    ${boxShadow()};
   }
 
   ul li svg * {
@@ -117,6 +118,9 @@ const JobSenseSection = styled(Section)`
 `;
 
 const SearchSection = styled(Section)`
+  background: ${colors.lightGreen.hex};
+  ${boxShadow()};
+
   form {
     display: flex;
     justify-content: center;
@@ -336,7 +340,7 @@ const LandingPage = () => (
 
       <form>
         <Search color={colors.text.black.hex} placeholder='Search by company, title, and/or location' />
-        <Button variant="secondary" type="submit">
+        <Button variant="primary" type="submit">
           Search
         </Button>
       </form>
