@@ -24,9 +24,11 @@ const Header = styled.header`
   position: fixed;
   right: 0;
   top: 0;
+  transform-origin: top center;
+  transform: ${({ scrollDirection }) => (scrollDirection === 'down' && scrollY >= 80) ? 'translateY(-100%)' : 'translateY(0)'};
   z-index: 401;
   ${({scrollY}) => (scrollY >= 80) ? boxShadow() : ''};
-  ${createTransitionForProperties(['padding'])};
+  ${createTransitionForProperties(['padding', 'transform'])};
 
   a {
     color: ${({scrollY}) => (scrollY < 80) ? colors.text.white.hex : colors.text.black.hex};
