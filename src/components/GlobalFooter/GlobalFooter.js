@@ -7,7 +7,7 @@ import { pxToEm } from '../../styles/utils/converters';
 import colors from '../../styles/colorPalette';
 
 const Footer = styled.footer`
-  background: ${colors.midnightGreenEagle.hex};
+  background: ${colors.teal.hex};
   color: ${colors.white.hex};
   display: grid;
   grid-template-areas:
@@ -85,7 +85,10 @@ const NoticeList = styled.ul`
   display: flex;
   font-size: ${pxToEm(12)};
   grid-area: privacy;
-  justify-content: space-between;
+
+  li:not(:first-child) {
+    margin-left: ${pxToEm(20)};
+  }
 
   @media only screen and (max-width: 700px) {
     align-content: flex-start;

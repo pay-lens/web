@@ -11,7 +11,7 @@ import colors from '../../styles/colorPalette';
 const Header = styled.header`
   align-content: center;
   align-items: center;
-  background: ${colors.midnightGreenEagle.hex};
+  background: ${colors.teal.hex};
   display: flex;
   height: ${pxToEm(50)};
   justify-content: space-between;

@@ -6,28 +6,43 @@ import colors from '../../styles/colorPalette';
 
 const ButtonBase = styled.button`
   border-radius: 2px;
-  font-weight: 500;
+  cursor: pointer;
+  font-weight: 600;
   height: ${pxToEm(44)};
   padding: 0 ${pxToEm(22)};
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  :hover {
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  }
 `;
 
 const PrimaryButton = styled(ButtonBase)`
-  background: ${colors.paradisePink.hex};
+  background: ${colors.pink.hex};
   border: none;
   color: ${colors.white.hex};
-  font-weight: 600;
+
+  :hover {
+    background: rgba(${colors.pink.rgb}, 0.9);
+  }
 `;
 
 const SecondaryButton = styled(ButtonBase)`
   background: transparent;
-  border: 1px solid ${colors.paradisePink.hex};
-  color: ${colors.paradisePink.hex};
+  border: 2px solid ${colors.pink.hex};
+  color: ${colors.pink.hex};
 `;
 
 const TertiaryButton = styled(ButtonBase)`
   background: transparent;
   border: none;
   color: ${colors.white.hex};
+  font-weight: 500;
+
+  :hover {
+    box-shadow: none;
+    background: rgba(${colors.black.rgb}, 0.25);
+  }
 `;
 
 const Button = ({ color, size, variant, ...rest }) => {

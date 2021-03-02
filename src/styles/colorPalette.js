@@ -1,21 +1,21 @@
 const colors = {
-  paradisePink: {
+  pink: {
     hex: '#EF476F',
     rgb: '239, 71, 111',
   },
-  orangeYellow: {
+  yellow: {
     hex: '#FFD166',
     rgb: '255, 209, 102',
   },
-  carribeanGreen: {
+  green: {
     hex: '#06D6A0',
     rgb: '6, 214, 160',
   },
-  blueNcs: {
+  blue: {
     hex: '#118AB2',
     rgb: '17, 138, 178',
   },
-  midnightGreenEagle: {
+  teal: {
     hex: '#073B4C',
     rgb: '7, 59, 76',
   },

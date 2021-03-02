@@ -67,7 +67,7 @@ const Cta = styled(Section)`
   }
 
   ::after {
-    background: ${colors.midnightGreenEagle.hex};
+    background: ${colors.teal.hex};
     box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
     content: "";
     height: 115%;
@@ -90,7 +90,7 @@ const JobSenseSection = styled(Section)`
   position: relative;
 
   ::after {
-    background: ${colors.blueNcs.hex};
+    background: ${colors.blue.hex};
     box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
     content: "";
     height: 200%;
