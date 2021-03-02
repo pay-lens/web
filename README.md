@@ -1,15 +1,14 @@
-# WorthAware [![Twitter Follow](https://img.shields.io/twitter/follow/AwareWorth?label=Follow&style=social)](https://twitter.com/AwareWorth)
+# WorthAware
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/AwareWorth?label=Follow&style=social)](https://twitter.com/AwareWorth)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/maintainability)](https://codeclimate.com/github/WorthAware/worthaware-web/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/test_coverage)](https://codeclimate.com/github/WorthAware/worthaware-web/test_coverage)
 
-[![GitHub version](https://badge.fury.io/gh/worthaware-web.svg)](https://badge.fury.io/gh/worthaware-web)
 [![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/WorthAware/worthaware-web?targetFile=package.json)
 
-> _This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)._
-
 ## Contents
-- [WorthAware ![Twitter Follow](https://twitter.com/AwareWorth)](#worthaware-)
+- [WorthAware](#worthaware)
   - [Contents](#contents)
   - [Technologies](#technologies)
     - [Languages](#languages)
@@ -17,7 +16,7 @@
     - [Testing](#testing)
     - [Database](#database)
   - [Getting Started](#getting-started)
-  - [Learn More](#learn-more)
+    - [API](#api)
   - [Deploy](#deploy)
   - [Contact](#contact)
 
@@ -43,30 +42,27 @@
 
 ## Getting Started
 
-First, run the development server:
+> _This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)._
+
+1. Install the packages with yarn
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+2. Run the development server:
+
+```bash
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### API
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Deploy
 
