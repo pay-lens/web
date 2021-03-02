@@ -9,6 +9,9 @@ import { pxToEm } from '../../styles/utils/converters';
 import { createTransitionForProperties } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
+import useScroll from '../../hooks/useScroll';
+import useWindowSize from '../../hooks/useWindowSize';
+
 const Header = styled.header`
   align-content: center;
   align-items: center;
@@ -17,7 +20,7 @@ const Header = styled.header`
   height: ${pxToEm(50)};
   justify-content: space-between;
   left: 0;
-  padding: 0 15vw;
+  padding: ${pxToEm(15)} 15vw;
   position: fixed;
   right: 0;
   top: 0;
@@ -25,16 +28,17 @@ const Header = styled.header`
   ${createTransitionForProperties(['padding'])};
 
   @media only screen and (max-width: 1200px) {
-    padding: 0 10vw;
+    padding: ${pxToEm(15)} 10vw;
   }
 
   @media only screen and (max-width: 900px) {
-    padding: 0 5vw;
+    padding: ${pxToEm(15)} 5vw;
   }
 `;
 
 const HeaderSpacer = styled.div`
   height: ${pxToEm(50)};
+  padding: ${pxToEm(15)} 0;
 `;
 
 const StyledLogo = styled.a`
@@ -77,44 +81,56 @@ const ButtonGroup = styled.div`
   }
 `;
 
-const GlobalHeader = () => (
-  <>
-    <Header>
-      <div>
-        <StyledLogo href="/">
-          <Logo />
-        </StyledLogo>
-        <h1 className="sr-only">WorthAware</h1>
-      </div>
+const GlobalHeader = () => {
+  const { scrollY, scrollDirection } = useScroll();
+  const isScrolledDown = (scrollDirection === 'down' && scrollY > 80);
+  const { width } = useWindowSize();
 
-      <Nav>
-        <ul>
-          <li>
-            <a href="">Salary</a>
-          </li>
-          <li>
-            <a href="">Rank</a>
-          </li>
-          <li>
-            <a href="">Jobs</a>
-          </li>
-        </ul>
-      </Nav>
+  return (
+    <>
+      <Header>
+        <div>
+          <StyledLogo href="/">
+            <Logo />
+          </StyledLogo>
+          <h1 className="sr-only">WorthAware</h1>
+        </div>
 
-      <Search placeholder="Search Salaries" />
+        {(width > 815) ? (
+          <>
+            <Nav>
+              <ul>
+                <li>
+                  <a href="">Salary</a>
+                </li>
+                <li>
+                  <a href="">Rank</a>
+                </li>
+                <li>
+                  <a href="">Jobs</a>
+                </li>
+              </ul>
+            </Nav>
 
-      <ButtonGroup>
-        <Button variant="primary" type="button">
-          Sign Up
-        </Button>
-        <Button variant="tertiary" type="button">
-          Sign In
-        </Button>
-      </ButtonGroup>
-    </Header>
+            <Search placeholder="Search Salaries" />
 
-    <HeaderSpacer />
-  </>
-);
+            <ButtonGroup>
+              <Button variant="primary" type="button">
+                Sign Up
+              </Button>
+              <Button variant="tertiary" type="button">
+                Sign In
+              </Button>
+            </ButtonGroup>
+          </>
+        ) : (
+          <div />
+        )}
+      </Header>
+
+      <HeaderSpacer />
+    </>
+  );
+};
 
 export default GlobalHeader;
