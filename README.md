@@ -1,10 +1,10 @@
 # WorthAware [![Twitter Follow](https://img.shields.io/twitter/follow/AwareWorth?label=Follow&style=social)](https://twitter.com/AwareWorth)
 
-[![Code Climate](https://codeclimate.com/github/vowaid/vowaid-web-v2/badges/gpa.svg)](https://codeclimate.com/github/hollyos/worthaware-web)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4bcc43a8e645e93a2aa5/test_coverage)](https://codeclimate.com/github/hollyos/worthaware-web/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/maintainability)](https://codeclimate.com/github/WorthAware/worthaware-web/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/test_coverage)](https://codeclimate.com/github/WorthAware/worthaware-web/test_coverage)
 
 [![GitHub version](https://badge.fury.io/gh/worthaware-web.svg)](https://badge.fury.io/gh/worthaware-web)
-[![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/hollyos/worthaware-web?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/WorthAware/worthaware-web?targetFile=package.json)
 
 > _This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)._
 
