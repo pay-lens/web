@@ -17,12 +17,12 @@ import ProfileIcon from '../../components/icons/custom/Profile/Profile';
 import ResumeIcon from '../../components/icons/custom/Resume/Resume';
 
 import { pxToEm } from '../../styles/utils/converters';
-import { boxShadow } from '../../styles/utils/mixins';
+import { boxShadow, createTransitionForProperties } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
 const Section = styled.section`
   padding: ${pxToEm(100)} 15vw;
-  transition: padding 0.3s ease;
+  ${createTransitionForProperties(['padding'])};
 
   :nth-child(even):not(:last-child) {
     padding-left: 50vw;
@@ -51,7 +51,7 @@ const Section = styled.section`
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     padding: ${pxToEm(100)} 5vw;
   }
 `;
@@ -99,7 +99,7 @@ const JobSenseSection = styled(Section)`
     bottom: -16%;
     transform-origin: center;
     transform: skewX(-66deg) translate(34vw, -8%);
-    transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    ${createTransitionForProperties(['height', 'margin', 'padding', 'transform', 'width'])};
     width: ${pxToEm(2000)};
     z-index: -1;
     ${boxShadow()};
@@ -126,7 +126,7 @@ const SearchSection = styled(Section)`
     justify-content: center;
     margin-top: ${pxToEm(30)};
     padding: 0 10%;
-    transition: padding 0.3s ease;
+    ${createTransitionForProperties(['padding'])};
 
     > div:first-child {
       flex-grow: 1;
@@ -134,7 +134,7 @@ const SearchSection = styled(Section)`
     }
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 800px) {
     form {
       padding: 0;
     }

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from '../Logo/Logo';
 
 import { pxToEm } from '../../styles/utils/converters';
+import { createTransitionForProperties } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
 const Footer = styled.footer`
@@ -16,7 +17,7 @@ const Footer = styled.footer`
     "privacy privacy";
   grid-template-columns: 155px auto;
   padding: ${pxToEm(20)} 15vw ${pxToEm(50)};
-  transition: padding 0.3s ease;
+  ${createTransitionForProperties(['padding'])};
 
   a {
     display: inline-block;
@@ -36,7 +37,7 @@ const Footer = styled.footer`
     grid-template-columns: auto;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     padding: ${pxToEm(20)} 5vw ${pxToEm(50)};
   }
 `;

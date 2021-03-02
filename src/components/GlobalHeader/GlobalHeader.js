@@ -6,6 +6,7 @@ import Button from '../Button/Button';
 import Search from '../Search/Search';
 
 import { pxToEm } from '../../styles/utils/converters';
+import { createTransitionForProperties } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
 const Header = styled.header`
@@ -15,16 +16,25 @@ const Header = styled.header`
   display: flex;
   height: ${pxToEm(50)};
   justify-content: space-between;
+  left: 0;
   padding: 0 15vw;
-  transition: padding 0.3s ease;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 401;
+  ${createTransitionForProperties(['padding'])};
 
   @media only screen and (max-width: 1200px) {
     padding: 0 10vw;
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     padding: 0 5vw;
   }
+`;
+
+const HeaderSpacer = styled.div`
+  height: ${pxToEm(50)};
 `;
 
 const StyledLogo = styled.a`
@@ -102,6 +112,8 @@ const GlobalHeader = () => (
         </Button>
       </ButtonGroup>
     </Header>
+
+    <HeaderSpacer />
   </>
 );
 
