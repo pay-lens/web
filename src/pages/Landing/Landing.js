@@ -3,18 +3,7 @@ import styled from 'styled-components';
 import Button from '../../components/Button/Button';
 import Search from '../../components/Search/Search';
 
-import AimIcon from '../../components/icons/custom/Aim/Aim';
-import CheckIcon from '../../components/icons/custom/Check/Check';
-import ClipboardIcon from '../../components/icons/custom/Clipboard/Clipboard';
-import CloudComputingIcon from '../../components/icons/custom/CloudComputing/CloudComputing';
-import DiamondIcon from '../../components/icons/custom/Diamond/Diamond';
-import DollarsIcon from '../../components/icons/custom/Dollars/Dollars';
-import HandshakeIcon from '../../components/icons/custom/Handshake/Handshake';
-import MapIcon from '../../components/icons/custom/Map/Map';
-import MindIcon from '../../components/icons/custom/Mind/Mind';
-import MoneyMessageIcon from '../../components/icons/custom/MoneyMessage/MoneyMessage';
-import ProfileIcon from '../../components/icons/custom/Profile/Profile';
-import ResumeIcon from '../../components/icons/custom/Resume/Resume';
+import { AimIcon, CheckIcon, ClipboardIcon, CloudComputingIcon, DiamondIcon, DollarsIcon, HandshakeIcon, MapIcon, MindIcon, MoneyMessageIcon, ProfileIcon, ResumeIcon } from '../../components/icons';
 
 import { pxToEm } from '../../styles/utils/converters';
 import { boxShadow, createTransitionForProperties } from '../../styles/utils/mixins';

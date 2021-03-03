@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import SearchIcon from '../icons/custom/Search/Search';
+import { SearchIcon } from '../icons';
 
 import { pxToEm } from '../../styles/utils/converters';
 import colors from '../../styles/colorPalette';
