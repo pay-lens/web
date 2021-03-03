@@ -1,26 +1,24 @@
 # Icons
 
-## Guidance and suggestions for using icons with IRCL.
+## Guidance and suggestions for using icons
 
-IRCL provides icons support in three ways:
+Icons are supported in three ways:
 
 1. Icons exported as React components (SVG icons).
 2. With the `SvgIcon` component, a React wrapper for custom SVG icons.
-
-IRCL has icons provided for consumption already across several different "themes". For each SVG icon, we export the respective React component from `@iss/ircl/icons`.
 
 ## Basic Usage
 
 ### Icon (direct use)
 
-Install `@iss/ircl`. Import using one of these two options:
+Import using one of these two options:
 
     ```js
     // Good
-    import Caret from '@iss/ircl/icons/Caret';
+    import Caret from 'components/icons/Caret';
 
     // Bad
-    import { Caret } from '@iss/ircl/icons';
+    import { Caret } from 'components/icons';
     ```
 
 #### Also Provided
