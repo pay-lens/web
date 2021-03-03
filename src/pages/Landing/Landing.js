@@ -25,7 +25,7 @@ const Section = styled.section`
     padding: ${pxToEm(100)} 10vw;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 800px) {
     :nth-child(even):not(:last-child) {
       padding-left: 15vw;
     }
@@ -87,7 +87,7 @@ const JobSenseSection = styled(Section)`
     position: absolute;
     bottom: -16%;
     transform-origin: center;
-    transform: skewX(-66deg) translate(34vw, -8%);
+    transform: skewX(-66deg) translate(37vw, -8%);
     ${createTransitionForProperties(['height', 'margin', 'padding', 'transform', 'width'])};
     width: ${pxToEm(2000)};
     z-index: -1;
@@ -98,7 +98,7 @@ const JobSenseSection = styled(Section)`
     fill: ${colors.text.white.hex};
   }
 
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 800px) {
     ::after {
       height: 250%;
       transform: skewX(-75deg) translate(38rem,-12%);
