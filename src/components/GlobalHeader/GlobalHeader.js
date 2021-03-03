@@ -12,30 +12,35 @@ import colors from '../../styles/colorPalette';
 import useScroll from '../../hooks/useScroll';
 import useWindowSize from '../../hooks/useWindowSize';
 
+const innerHeight = 50;
+const outerHeight = 80;
+const scrollColorHeight = 20;
+const scrollHideHeight = outerHeight + 20;
+
 const Header = styled.header`
   align-content: center;
   align-items: center;
-  background: ${({scrollY}) => (scrollY < 80) ? colors.teal.hex : colors.white.hex};
+  background: ${({scrollY}) => (scrollY < scrollColorHeight) ? colors.teal.hex : colors.white.hex};
   display: flex;
-  height: ${pxToEm(50)};
+  height: ${pxToEm(innerHeight)};
   justify-content: space-between;
   left: 0;
-  padding: ${pxToEm(15)} 15vw;
+  padding: ${pxToEm((outerHeight - innerHeight) / 2)} 15vw;
   position: fixed;
   right: 0;
   top: 0;
   transform-origin: top center;
-  transform: ${({ scrollDirection }) => (scrollDirection === 'down' && scrollY >= 80) ? 'translateY(-100%)' : 'translateY(0)'};
+  transform: ${({ scrollDirection }) => (scrollDirection === 'down' && scrollY >= scrollHideHeight) ? 'translateY(-100%)' : 'translateY(0)'};
   z-index: 401;
-  ${({scrollY}) => (scrollY >= 80) ? boxShadow() : ''};
-  ${createTransitionForProperties(['padding', 'transform'])};
+  ${({scrollY}) => (scrollY >= scrollColorHeight) ? boxShadow() : ''};
+  ${createTransitionForProperties(['background', 'padding', 'transform'])};
 
   a {
-    color: ${({scrollY}) => (scrollY < 80) ? colors.text.white.hex : colors.text.black.hex};
+    color: ${({scrollY}) => (scrollY < scrollColorHeight) ? colors.text.white.hex : colors.text.black.hex};
   }
 
   svg * {
-    fill: ${({scrollY}) => (scrollY < 80) ? colors.text.white.hex : colors.text.black.hex};
+    fill: ${({scrollY}) => (scrollY < scrollColorHeight) ? colors.text.white.hex : colors.text.black.hex};
   }
 
   @media only screen and (max-width: 1200px) {
@@ -48,7 +53,7 @@ const Header = styled.header`
 `;
 
 const HeaderSpacer = styled.div`
-  height: ${pxToEm(50)};
+  height: ${pxToEm(innerHeight)};
   padding: ${pxToEm(15)} 0;
 `;
 
@@ -73,7 +78,7 @@ const Nav = styled.nav`
 
     a {
       display: inline-block;
-      line-height: ${pxToEm(50)};
+      line-height: ${pxToEm(innerHeight)};
       padding: 0 ${pxToEm(5)};
     }
   }
@@ -119,7 +124,7 @@ const GlobalHeader = () => {
 
             <Search
               placeholder="Search Salaries"
-              color={(scrollY < 80) ? colors.text.white.hex : colors.text.black.hex }
+              color={(scrollY < scrollColorHeight) ? colors.text.white.hex : colors.text.black.hex }
             />
 
             <ButtonGroup>
@@ -127,7 +132,7 @@ const GlobalHeader = () => {
                 Sign Up
               </Button>
               <Button
-                color={(scrollY < 80) ? colors.text.white.hex : colors.pink.hex }
+                color={(scrollY < scrollColorHeight) ? colors.text.white.hex : colors.pink.hex }
                 variant="tertiary"
                 type="button"
               >

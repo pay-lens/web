@@ -37,7 +37,7 @@ const TertiaryButton = styled(ButtonBase)`
   background: transparent;
   border: none;
   color: ${({ color }) => color || colors.white.hex};
-  font-weight: 500;
+  font-weight: ${({ color }) => (color === colors.pink.hex) ? 600 : 500};
 
   :hover {
     box-shadow: none;
