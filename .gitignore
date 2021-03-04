@@ -19,7 +19,6 @@ automation/.vs/*
 /build
 /demo
 /storybook-static
-/public
 
 # terraform
 /tools
