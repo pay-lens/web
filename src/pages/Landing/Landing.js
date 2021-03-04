@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import Image from 'next/image';
 import Button from '../../components/Button/Button';
 import Search from '../../components/Search/Search';
 
@@ -186,8 +185,6 @@ const LandingPage = () => (
       <header>
         <h1>Salaries</h1>
       </header>
-
-      <Image src="/assets/chalkboard-financial-chart.jpg" width="100vw" height="auto" />
 
       <IconBulletList>
         <li>
