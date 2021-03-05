@@ -9,6 +9,7 @@ import colors from '../../styles/colorPalette';
 
 const Footer = styled.footer`
   background: ${colors.teal.hex};
+  background: linear-gradient(180deg, #094D63 20%, ${colors.teal.hex} 55%, #052935 95%);
   box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
   color: ${colors.white.hex};
   display: grid;

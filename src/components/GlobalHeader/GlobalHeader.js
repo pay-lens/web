@@ -14,13 +14,13 @@ import useWindowSize from '../../hooks/useWindowSize';
 
 const innerHeight = 50;
 const outerHeight = 80;
-const scrollColorHeight = 20;
+const scrollColorHeight = outerHeight + 30;
 const scrollHideHeight = outerHeight + 20;
 
 const Header = styled.header`
   align-content: center;
   align-items: center;
-  background: ${({scrollY}) => (scrollY < scrollColorHeight) ? colors.teal.hex : colors.white.hex};
+  background: ${({scrollY}) => (scrollY < scrollColorHeight) ? 'transparent' : colors.white.hex};
   display: flex;
   height: ${pxToEm(innerHeight)};
   justify-content: space-between;

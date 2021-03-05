@@ -58,13 +58,14 @@ const Cta = styled(Section)`
 
   ::after {
     background: ${colors.teal.hex};
+    background: linear-gradient(-6deg, #094D63 10%, ${colors.teal.hex} 45%, #052935 80%);
     content: "";
-    height: 115%;
+    height: ${pxToEm(670)};
     left: 0;
     position: absolute;
     top: 0;
     transform-origin: center;
-    transform: skewY(6deg) translateY(-15%);
+    transform: skewY(6deg) translateY(-25.5%);
     width: 100vw;
     z-index: -1;
     ${boxShadow()};
@@ -81,6 +82,7 @@ const JobSenseSection = styled(Section)`
 
   ::after {
     background: ${colors.blue.hex};
+    background: linear-gradient(0deg, #0F789B 10%, ${colors.blue.hex} 45%, #139CC9 80%, #15AEE1 90%);
     content: "";
     height: 200%;
     left: 0;
@@ -108,6 +110,7 @@ const JobSenseSection = styled(Section)`
 
 const SearchSection = styled(Section)`
   background: ${colors.lightGreen.hex};
+  background: linear-gradient(0deg, #A5F7E4 10%, ${colors.lightGreen.hex} 45%, #D3FBF2 80%);
   ${boxShadow()};
 
   form {
