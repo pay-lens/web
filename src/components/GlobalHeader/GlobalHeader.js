@@ -95,7 +95,8 @@ const StyledLogo = styled.a`
 `;
 
 const Nav = styled.nav`
-  width: 15vw;
+  flex-grow: 1;
+  max-width: 28%;
 
   ul {
     align-content: center;
@@ -109,6 +110,11 @@ const Nav = styled.nav`
       padding: 0 ${pxToEm(5)};
     }
   }
+`;
+
+const StyledSearch = styled(Search)`
+  flex-grow: 2;
+  width: 33%;
 `;
 
 const ButtonGroup = styled.div`
@@ -152,7 +158,7 @@ const GlobalHeader = () => {
               </ul>
             </Nav>
 
-            <Search
+            <StyledSearch
               placeholder="Search Salaries"
               color={(scrollY < scrollColorHeight) ? themeStyles.top.color : themeStyles.scrolled.color }
             />

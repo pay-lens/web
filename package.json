@@ -10,8 +10,8 @@
     "start": "next start",
     "test": "jest ./src"
   },
-  "engines" : {
-    "node" : ">=14.0.0 <15.0.0"
+  "engines": {
+    "node": ">=14.0.0 <15.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
