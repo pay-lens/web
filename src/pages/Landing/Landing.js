@@ -21,8 +21,16 @@ const Section = styled.section`
     margin-bottom: ${pxToEm(30)};
   }
 
+  p {
+    max-width: 35vw;
+  }
+
   @media only screen and (max-width: 1200px) {
     padding: ${pxToEm(100)} 10vw;
+
+    :nth-child(even):not(:last-child) {
+      padding-left: 40vw;
+    }
   }
 
   @media only screen and (max-width: 800px) {
@@ -42,6 +50,10 @@ const Section = styled.section`
 
   @media only screen and (max-width: 900px) {
     padding: ${pxToEm(100)} 5vw;
+
+    :nth-child(even):not(:last-child) {
+      padding-left: 45vw;
+    }
   }
 `;
 
@@ -73,6 +85,74 @@ const Cta = styled(Section)`
 
   svg * {
     fill: ${colors.text.white.hex};
+  }
+`;
+
+const SalarySection = styled(Section)`
+  position: relative;
+
+  ::after {
+    background: url("/assets/rocket.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 600px;
+    max-width: 45vw;
+    width: 681px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center;
+    transform: translate(5vw, -15%);
+  }
+
+  @media only screen and (max-width: 1200px) {
+    ::after {
+      transform: translate(5vw, -15%);
+      max-width: calc(40vw);
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    ::after {
+      transform: translate(5vw, -15%);
+      max-width: calc(35vw);
+    }
+  }
+`;
+
+const WorthSection = styled(Section)`
+  position: relative;
+
+  ::after {
+    background: url("/assets/worth-card.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 358px;
+    width: 359px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform-origin: center;
+    transform: translate(-15vw, 30%);
+    max-width: calc(35vw);
+    ${createTransitionForProperties(['transform', 'max-width'])};
+  }
+
+  @media only screen and (max-width: 1200px) {
+    ::after {
+      transform: translate(-10vw, 30%);
+      max-width: calc(40vw);
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    ::after {
+      transform: translate(-5vw, 30%);
+      max-width: calc(45vw);
+    }
   }
 `;
 
@@ -184,7 +264,7 @@ const LandingPage = () => (
       </ButtonGroup>
     </Cta>
 
-    <Section>
+    <SalarySection>
       <header>
         <h1>Salaries</h1>
       </header>
@@ -215,9 +295,9 @@ const LandingPage = () => (
           Sign Up
         </Button>
       </ButtonGroup>
-    </Section>
+    </SalarySection>
 
-    <Section>
+    <WorthSection>
       <header>
         <h1>Your Worth</h1>
       </header>
@@ -248,7 +328,7 @@ const LandingPage = () => (
           Sign Up
         </Button>
       </ButtonGroup>
-    </Section>
+    </WorthSection>
 
     <JobSenseSection>
       <header>
