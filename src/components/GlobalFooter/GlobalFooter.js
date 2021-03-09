@@ -98,6 +98,10 @@ const NoticeList = styled.ul`
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
+
+    li:not(:first-child) {
+      margin-left: 0;
+    }
   }
 `;
 
