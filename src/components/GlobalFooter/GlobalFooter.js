@@ -164,6 +164,8 @@ const GlobalFooter = () => (
       <li><a href="">Sitemap</a></li>
       <li>Support: paysa.support@ceridian.com</li>
     </NoticeList>
+
+    <p><small className="caption">&copy; 2021 WorthAware</small></p>
   </Footer>
 );
 

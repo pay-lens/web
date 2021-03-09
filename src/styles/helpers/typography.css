@@ -68,9 +68,17 @@ body,
 }
 
 h6,
-small,
 .font-size--6 {
   font-size: 0.8571rem;
+  /* 12px */
+  line-height: 1.1667em;
+  /* 14px */
+}
+
+
+small,
+.small {
+  font-size: 0.8571em;
   /* 12px */
   line-height: 1.1667em;
   /* 14px */
