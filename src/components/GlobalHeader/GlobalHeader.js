@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from '../Logo/Logo';
 import Button from '../Button/Button';
 import Search from '../Search/Search';
+import MobileNav from '../MobileNav/MobileNav';
 
 import { pxToEm } from '../../styles/utils/converters';
 import { boxShadow, createTransitionForProperties } from '../../styles/utils/mixins';
@@ -39,7 +40,7 @@ const Theme = {
       color: colors.text.white.hex,
     },
   },
-}
+};
 
 const Header = styled.header`
   ${({ scrollDirection, scrollY, theme }) => `
@@ -183,7 +184,7 @@ const GlobalHeader = () => {
             </ButtonGroup>
           </>
         ) : (
-          <div />
+          <MobileNav top={outerHeight} />
         )}
       </Header>
 
