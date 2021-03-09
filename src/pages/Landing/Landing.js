@@ -60,7 +60,7 @@ const Cta = styled(Section)`
     background: ${colors.teal.hex};
     background: linear-gradient(-6deg, #094D63 10%, ${colors.teal.hex} 45%, #052935 80%);
     content: "";
-    height: ${pxToEm(670)};
+    height: 135%;
     left: 0;
     position: absolute;
     top: 0;
