@@ -72,7 +72,7 @@ const Header = styled.header`
       padding: ${pxToEm(15)} 10vw;
     }
 
-    @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 942px) {
       padding: ${pxToEm(15)} 5vw;
     }
   `};
@@ -96,7 +96,8 @@ const StyledLogo = styled.a`
 
 const Nav = styled.nav`
   flex-grow: 1;
-  max-width: 28%;
+  margin: 0 ${pxToEm(10)} 0 ${pxToEm(20)};
+  max-width: 200px;
 
   ul {
     align-content: center;
@@ -108,13 +109,18 @@ const Nav = styled.nav`
       display: inline-block;
       line-height: ${pxToEm(innerHeight)};
       padding: 0 ${pxToEm(5)};
+      ${createTransitionForProperties(['font-weight'])};
+
+      :hover {
+        font-weight: 600;
+      }
     }
   }
 `;
 
 const StyledSearch = styled(Search)`
-  flex-grow: 2;
-  width: 33%;
+  flex-grow: 1;
+  margin: 0 ${pxToEm(20)} 0 ${pxToEm(10)};
 `;
 
 const ButtonGroup = styled.div`
@@ -142,7 +148,7 @@ const GlobalHeader = () => {
           <h1 className="sr-only">WorthAware</h1>
         </div>
 
-        {(width > 815) ? (
+        {(width >= 840) ? (
           <>
             <Nav>
               <ul>

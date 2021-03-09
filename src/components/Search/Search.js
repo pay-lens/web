@@ -57,8 +57,8 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const Search = ({ color, ...rest }) => (
-  <SearchWrapper color={color}>
+const Search = ({ className, color, ...rest }) => (
+  <SearchWrapper className={className} color={color}>
     <SearchIcon />
     <Input type="text" {...rest} />
   </SearchWrapper>
