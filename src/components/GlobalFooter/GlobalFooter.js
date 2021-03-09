@@ -166,7 +166,7 @@ const GlobalFooter = () => (
       <li><a href="">Terms</a></li>
       <li><a href="">Cookie Notice</a></li>
       <li><a href="">Sitemap</a></li>
-      <li>Support: paysa.support@ceridian.com</li>
+      <li>Support: support@worthaware.com</li>
     </NoticeList>
 
     <p><small className="caption">&copy; 2021 WorthAware</small></p>
