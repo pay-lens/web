@@ -38,11 +38,6 @@ const Section = styled.section`
       padding-left: 15vw;
     }
 
-    :nth-child(4)::after {
-      height: 250%;
-      transform: skewX(-75deg) translate(38rem,-12%);
-    }
-
     :last-child form {
       padding: 0;
     }
@@ -92,31 +87,28 @@ const SalarySection = styled(Section)`
   position: relative;
 
   ::after {
-    background: url("/assets/rocket.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background: url("/assets/rocket.png");
     content: "";
     height: 600px;
-    max-width: 45vw;
-    width: 681px;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    transform-origin: center;
-    transform: translate(5vw, -15%);
+    transform-origin: left center;
+    transform: scale(1.1) translate(0vw, -25%);
+    width: 681px;
   }
 
   @media only screen and (max-width: 1200px) {
     ::after {
-      transform: translate(5vw, -15%);
-      max-width: calc(40vw);
+      transform: scale(0.8) translate(0, -45%);
     }
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 950px) {
     ::after {
-      transform: translate(5vw, -15%);
-      max-width: calc(35vw);
+      transform: scale(0.7) translate(0, -55%);
     }
   }
 `;
@@ -164,14 +156,14 @@ const JobSenseSection = styled(Section)`
     background: ${colors.blue.hex};
     background: linear-gradient(0deg, #0F789B 10%, ${colors.blue.hex} 45%, #139CC9 80%, #15AEE1 90%);
     content: "";
-    height: 200%;
+    height: ${pxToEm(2000)};
     left: 0;
     position: absolute;
     bottom: -16%;
     transform-origin: center;
-    transform: skewX(-66deg) translate(37vw, -8%);
+    transform: skewX(-63deg) translate(32%, -4%);
     ${createTransitionForProperties(['height', 'margin', 'padding', 'transform', 'width'])};
-    width: ${pxToEm(2000)};
+    width: ${pxToEm(4000)};
     z-index: -1;
     ${boxShadow()};
   }
@@ -180,10 +172,17 @@ const JobSenseSection = styled(Section)`
     fill: ${colors.text.white.hex};
   }
 
+  @media only screen and (max-width: 1200px) {
+    ::after {
+      height: ${pxToEm(1800)};
+      transform: skewX(-68deg) translate(32%, -4%);
+    }
+  }
+
   @media only screen and (max-width: 800px) {
     ::after {
-      height: 250%;
-      transform: skewX(-75deg) translate(38rem,-12%);
+      height: ${pxToEm(2000)};
+      transform: skewX(-75deg) translate(40%, -4%);
     }
   }
 `;
