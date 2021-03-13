@@ -96,19 +96,19 @@ const SalarySection = styled(Section)`
     position: absolute;
     top: 0;
     transform-origin: left center;
-    transform: scale(1.1) translate(0vw, -25%);
-    width: 681px;
+    transform: scale(1) translate(-5vw, -20%);
+    width: 639px;
   }
 
   @media only screen and (max-width: 1200px) {
     ::after {
-      transform: scale(0.8) translate(0, -45%);
+      transform: scale(0.9) translate(-5vw, -30%);
     }
   }
 
   @media only screen and (max-width: 950px) {
     ::after {
-      transform: scale(0.7) translate(0, -55%);
+      transform: scale(0.8) translate(-5vw, -40%);
     }
   }
 `;
