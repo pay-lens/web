@@ -9,6 +9,9 @@ import { pxToEm } from '../../styles/utils/converters';
 import { boxShadow, createTransitionForProperties } from '../../styles/utils/mixins';
 import colors from '../../styles/colorPalette';
 
+/**
+ * Generic section component for re-use across all off the landing page sections.
+ */
 const Section = styled.section`
   padding: ${pxToEm(100)} 15vw;
   ${createTransitionForProperties(['padding'])};
@@ -37,10 +40,6 @@ const Section = styled.section`
     :nth-child(even):not(:last-child) {
       padding-left: 15vw;
     }
-
-    :last-child form {
-      padding: 0;
-    }
   }
 
   @media only screen and (max-width: 900px) {
@@ -52,6 +51,9 @@ const Section = styled.section`
   }
 `;
 
+/**
+ * The first section of the landing page.
+ */
 const Cta = styled(Section)`
   color: ${colors.text.white.hex};
   padding-top: ${pxToEm(100)};
@@ -83,6 +85,9 @@ const Cta = styled(Section)`
   }
 `;
 
+/**
+ * The second section of the landing page.
+ */
 const SalarySection = styled(Section)`
   position: relative;
 
@@ -113,6 +118,9 @@ const SalarySection = styled(Section)`
   }
 `;
 
+/**
+ * The third section of the landing page.
+ */
 const WorthSection = styled(Section)`
   position: relative;
 
@@ -148,9 +156,30 @@ const WorthSection = styled(Section)`
   }
 `;
 
+/**
+ * The fourth section of the landing page.
+ */
 const JobSenseSection = styled(Section)`
   color: ${colors.text.white.hex};
   position: relative;
+
+  ::before {
+    background: url("/assets/JobSense.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    content: "";
+    height: 834px;
+    left: 0;
+    max-height: 470px;
+    max-width: calc(30vw);
+    position: absolute;
+    top: 0;
+    transform-origin: center center;
+    transform: translate(15vw, 0%);
+    width: 670px;
+    ${createTransitionForProperties(['transform', 'max-width'])};
+  }
 
   ::after {
     background: ${colors.blue.hex};
@@ -173,9 +202,19 @@ const JobSenseSection = styled(Section)`
   }
 
   @media only screen and (max-width: 1200px) {
+    ::before {
+      transform: scale(0.9) translate(5vw, 0);
+    }
+
     ::after {
       height: ${pxToEm(1800)};
       transform: skewX(-68deg) translate(32%, -4%);
+    }
+  }
+
+  @media only screen and (max-width: 950px) {
+    ::before {
+      transform: scale(0.8) translate(5vw, 0);
     }
   }
 
@@ -187,10 +226,55 @@ const JobSenseSection = styled(Section)`
   }
 `;
 
+/**
+ * The fifth section of the landing page.
+ */
+const RaisesSection = styled(Section)`
+  position: relative;
+
+  ::after {
+    background: url("/assets/woman-reading.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 358px;
+    width: 359px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transform-origin: center;
+    transform: translate(-15vw, 30%);
+    max-width: calc(35vw);
+    ${createTransitionForProperties(['transform', 'max-width'])};
+  }
+
+  @media only screen and (max-width: 1200px) {
+    ::after {
+      transform: translate(-10vw, 30%);
+      max-width: calc(40vw);
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    ::after {
+      transform: translate(-5vw, 30%);
+      max-width: calc(45vw);
+    }
+  }
+`;
+
+/**
+ * The last section of the landing page.
+ */
 const SearchSection = styled(Section)`
   background: ${colors.lightGreen.hex};
   background: linear-gradient(0deg, #A5F7E4 10%, ${colors.lightGreen.hex} 45%, #D3FBF2 80%);
   ${boxShadow()};
+
+  p {
+    max-width: unset;
+  }
 
   form {
     display: flex;
@@ -233,6 +317,9 @@ const IconBulletList = styled.ul`
   }
 `;
 
+/**
+ * A grouping of buttons within a section. Utilized to display buttons alongside each other.
+ */
 const ButtonGroup = styled.div`
   margin-top: ${pxToEm(30)};
 
@@ -241,6 +328,9 @@ const ButtonGroup = styled.div`
   }
 `;
 
+/**
+ * A wrapper around an icon for spacing consistency.
+ */
 const IconContainer = styled.div`
   align-content: center;
   align-items: center;
@@ -249,6 +339,11 @@ const IconContainer = styled.div`
   width: ${pxToEm(60)};
 `;
 
+/**
+ * The landing page, which displays generic information about WorthAware.
+ *
+ * @public
+ */
 const LandingPage = () => (
   <main>
     <Cta>
@@ -362,7 +457,7 @@ const LandingPage = () => (
       </ButtonGroup>
     </JobSenseSection>
 
-    <Section>
+    <RaisesSection>
       <header>
         <h1>Raises and Offers</h1>
       </header>
@@ -397,7 +492,7 @@ const LandingPage = () => (
           Evaluate an Offer
         </Button>
       </ButtonGroup>
-    </Section>
+    </RaisesSection>
 
     <SearchSection>
       <header>
