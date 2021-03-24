@@ -2,18 +2,18 @@ import GlobalHeader from "../components/GlobalHeader/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter/GlobalFooter";
 
 // CSS Reset
-import "../styles/utils/reset.css";
+import "../styles/css/reset.css";
 
 // Normalize CSS (https://necolas.github.io/normalize.css/)
-import "../styles/utils/normalize.css";
+import "../styles/css/normalize.css";
 
 // General Styles
-import "../styles/base.css";
+import "../styles/css/base.css";
 
 // Helper Files
-import "../styles/helpers/typography.css";
-import "../styles/helpers/utils.css";
-import "../styles/helpers/sr-only.css";
+import "../styles/css/typography.css";
+import "../styles/css/utils.css";
+import "../styles/css/sr-only.css";
 
 const MyApp = ({ Component, pageProps }) => (
   <>
