@@ -115,7 +115,9 @@ const Nav = styled.nav`
       padding: 0 ${pxToEm(5)};
       ${createTransitionForProperties(["font-weight"])};
 
-      :hover {
+      &.active,
+      :hover,
+      :active {
         font-weight: 600;
       }
     }
@@ -136,7 +138,7 @@ const ButtonGroup = styled.div`
 `;
 
 const GlobalHeader = () => {
-  const router = useRouter();
+  const { pathname } = useRouter();
   const { scrollY, scrollDirection } = useScroll();
   const { width } = useWindowSize();
   const theme = usePrefersDarkMode() ? "dark" : "light";
@@ -145,7 +147,7 @@ const GlobalHeader = () => {
 
   return (
     <>
-      <Header pathname={router.pathname} scrollDirection={scrollDirection} scrollY={scrollY} theme={themeStyles}>
+      <Header pathname={pathname} scrollDirection={scrollDirection} scrollY={scrollY} theme={themeStyles}>
         <div>
           <Link href="/">
             <StyledLogo>
@@ -160,18 +162,18 @@ const GlobalHeader = () => {
             <Nav>
               <ul>
                 <li>
-                  <Link href="/salary" className={router.pathname === "/salary" ? "active" : ""}>
-                    <a>Salary</a>
+                  <Link href="/salary">
+                    <a className={pathname === "/salary" ? "active" : ""}>Salary</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/rank">
-                    <a>Rank</a>
+                    <a className={pathname === "/rank" ? "active" : ""}>Rank</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/jobs">
-                    <a>Jobs</a>
+                    <a className={pathname === "/jobs" ? "active" : ""}>Jobs</a>
                   </Link>
                 </li>
               </ul>
