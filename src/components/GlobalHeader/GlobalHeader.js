@@ -1,18 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Logo from '../Logo/Logo';
-import Button from '../Button/Button';
-import Search from '../Search/Search';
-import MobileNav from '../MobileNav/MobileNav';
+import { useRouter } from "next/router";
 
-import { pxToEm } from '../../styles/utils/converters';
-import { boxShadow, createTransitionForProperties } from '../../styles/utils/mixins';
-import colors from '../../styles/colorPalette';
+import Link from "next/link";
+import Logo from "../Logo/Logo";
+import Button from "../Button/Button";
+import Search from "../Search/Search";
+import MobileNav from "../MobileNav/MobileNav";
 
-import useScroll from '../../hooks/useScroll';
-import useWindowSize from '../../hooks/useWindowSize';
-import usePrefersDarkMode from '../../hooks/usePrefersDarkMode';
+import { pxToEm } from "../../styles/utils/converters";
+import { boxShadow, createTransitionForProperties } from "../../styles/utils/mixins";
+import colors from "../../styles/colorPalette";
+
+import useScroll from "../../hooks/useScroll";
+import useWindowSize from "../../hooks/useWindowSize";
+import usePrefersDarkMode from "../../hooks/usePrefersDarkMode";
 
 const innerHeight = 50;
 const outerHeight = 80;
@@ -22,7 +25,7 @@ const scrollHideHeight = outerHeight + 20;
 const Theme = {
   light: {
     top: {
-      background: 'transparent',
+      background: "transparent",
       color: colors.text.white.hex,
     },
     scrolled: {
@@ -32,7 +35,7 @@ const Theme = {
   },
   dark: {
     top: {
-      background: 'transparent',
+      background: "transparent",
       color: colors.text.white.hex,
     },
     scrolled: {
@@ -43,10 +46,10 @@ const Theme = {
 };
 
 const Header = styled.header`
-  ${({ scrollDirection, scrollY, theme }) => `
+  ${({ pathname, scrollDirection, scrollY, theme }) => `
     align-content: center;
     align-items: center;
-    background: ${(scrollY < scrollColorHeight) ? theme.top.background : theme.scrolled.background};
+    background: ${pathname === "/" && scrollY < scrollColorHeight ? theme.top.background : theme.scrolled.background};
     display: flex;
     height: ${pxToEm(innerHeight)};
     justify-content: space-between;
@@ -56,17 +59,17 @@ const Header = styled.header`
     right: 0;
     top: 0;
     transform-origin: top center;
-    transform: ${(scrollDirection === 'down' && scrollY >= scrollHideHeight) ? 'translateY(-100%)' : 'translateY(0)'};
+    transform: ${scrollDirection === "down" && scrollY >= scrollHideHeight ? "translateY(-100%)" : "translateY(0)"};
     z-index: 401;
-    ${(scrollY >= scrollColorHeight) ? boxShadow() : ''};
-    ${createTransitionForProperties(['background', 'padding', 'transform'])};
+    ${scrollY >= scrollColorHeight ? boxShadow() : ""};
+    ${createTransitionForProperties(["background", "padding", "transform"])};
 
     a {
-      color: ${(scrollY < scrollColorHeight) ? theme.top.color : theme.scrolled.color};
+      color: ${scrollY < scrollColorHeight ? theme.top.color : theme.scrolled.color};
     }
 
     svg * {
-      fill: ${(scrollY < scrollColorHeight) ? theme.top.color : theme.scrolled.color};
+      fill: ${scrollY < scrollColorHeight ? theme.top.color : theme.scrolled.color};
     }
 
     @media only screen and (max-width: 1200px) {
@@ -79,7 +82,6 @@ const Header = styled.header`
   `};
 `;
 
-
 const HeaderSpacer = styled.div`
   height: ${pxToEm(innerHeight)};
   padding: ${pxToEm(15)} 0;
@@ -87,6 +89,7 @@ const HeaderSpacer = styled.div`
 
 const StyledLogo = styled.a`
   align-items: center;
+  cursor: pointer;
   display: flex;
 
   svg {
@@ -110,7 +113,7 @@ const Nav = styled.nav`
       display: inline-block;
       line-height: ${pxToEm(innerHeight)};
       padding: 0 ${pxToEm(5)};
-      ${createTransitionForProperties(['font-weight'])};
+      ${createTransitionForProperties(["font-weight"])};
 
       :hover {
         font-weight: 600;
@@ -133,52 +136,54 @@ const ButtonGroup = styled.div`
 `;
 
 const GlobalHeader = () => {
+  const router = useRouter();
   const { scrollY, scrollDirection } = useScroll();
   const { width } = useWindowSize();
-  const theme = usePrefersDarkMode() ? 'dark' : 'light';
+  const theme = usePrefersDarkMode() ? "dark" : "light";
 
   const themeStyles = Theme[theme];
 
   return (
     <>
-      <Header scrollDirection={scrollDirection} scrollY={scrollY} theme={themeStyles}>
+      <Header pathname={router.pathname} scrollDirection={scrollDirection} scrollY={scrollY} theme={themeStyles}>
         <div>
-          <StyledLogo href="/">
-            <Logo />
-          </StyledLogo>
+          <Link href="/">
+            <StyledLogo>
+              <Logo />
+            </StyledLogo>
+          </Link>
           <h1 className="sr-only">WorthAware</h1>
         </div>
 
-        {(width >= 840) ? (
+        {width >= 840 ? (
           <>
             <Nav>
               <ul>
                 <li>
-                  <a href="">Salary</a>
+                  <Link href="/salary" className={router.pathname === "/salary" ? "active" : ""}>
+                    <a>Salary</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">Rank</a>
+                  <Link href="/rank">
+                    <a>Rank</a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="">Jobs</a>
+                  <Link href="/jobs">
+                    <a>Jobs</a>
+                  </Link>
                 </li>
               </ul>
             </Nav>
 
-            <StyledSearch
-              placeholder="Search Salaries"
-              color={(scrollY < scrollColorHeight) ? themeStyles.top.color : themeStyles.scrolled.color }
-            />
+            <StyledSearch placeholder="Search Salaries" color={scrollY < scrollColorHeight ? themeStyles.top.color : themeStyles.scrolled.color} />
 
             <ButtonGroup>
               <Button variant="primary" type="button">
                 Sign Up
               </Button>
-              <Button
-                color={(scrollY < scrollColorHeight) ? themeStyles.top.color : themeStyles.scrolled.color }
-                variant="tertiary"
-                type="button"
-              >
+              <Button color={scrollY < scrollColorHeight ? themeStyles.top.color : themeStyles.scrolled.color} variant="tertiary" type="button">
                 Sign In
               </Button>
             </ButtonGroup>
