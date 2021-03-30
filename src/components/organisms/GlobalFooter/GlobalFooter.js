@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import Logo from '../Logo/Logo';
+import Logo from "../../atoms/Logo/Logo";
 
-import { pxToEm } from '../../styles/utils/converters';
-import { createTransitionForProperties } from '../../styles/utils/mixins';
-import colors from '../../styles/colorPalette';
+import { pxToEm } from "../../../styles/utils/converters";
+import { createTransitionForProperties } from "../../../styles/utils/mixins";
+import colors from "../../../styles/colorPalette";
 
 const Footer = styled.footer`
   background: ${colors.teal.hex};
-  background: linear-gradient(180deg, #094D63 20%, ${colors.teal.hex} 55%, #052935 95%);
+  background: linear-gradient(180deg, #094d63 20%, ${colors.teal.hex} 55%, #052935 95%);
   box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
   color: ${colors.white.hex};
   display: grid;
@@ -18,7 +18,7 @@ const Footer = styled.footer`
     "privacy privacy";
   grid-template-columns: 155px auto;
   padding: ${pxToEm(20)} 15vw ${pxToEm(50)};
-  ${createTransitionForProperties(['padding'])};
+  ${createTransitionForProperties(["padding"])};
 
   a {
     display: inline-block;
@@ -162,14 +162,24 @@ const GlobalFooter = () => (
     </Nav>
 
     <NoticeList>
-      <li><a href="">Privacy</a></li>
-      <li><a href="">Terms</a></li>
-      <li><a href="">Cookie Notice</a></li>
-      <li><a href="">Sitemap</a></li>
+      <li>
+        <a href="">Privacy</a>
+      </li>
+      <li>
+        <a href="">Terms</a>
+      </li>
+      <li>
+        <a href="">Cookie Notice</a>
+      </li>
+      <li>
+        <a href="">Sitemap</a>
+      </li>
       <li>Support: support@worthaware.com</li>
     </NoticeList>
 
-    <p><small className="caption">&copy; 2021 WorthAware</small></p>
+    <p>
+      <small className="caption">&copy; 2021 WorthAware</small>
+    </p>
   </Footer>
 );
 

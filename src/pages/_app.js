@@ -1,5 +1,5 @@
-import GlobalHeader from "../components/GlobalHeader/GlobalHeader";
-import GlobalFooter from "../components/GlobalFooter/GlobalFooter";
+import GlobalHeader from "../components/organisms/GlobalHeader/GlobalHeader";
+import GlobalFooter from "../components/organisms/GlobalFooter/GlobalFooter";
 
 // CSS Reset
 import "../styles/css/reset.css";

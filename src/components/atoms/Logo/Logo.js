@@ -1,5 +1,5 @@
-import React from 'react';
-import createSvgIcon from '../icons/utils/createSvgIcon';
+import React from "react";
+import createSvgIcon from "../../icons/utils/createSvgIcon";
 
 const source = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300">
@@ -14,7 +14,7 @@ const source = () => (
 );
 
 const Svg = source();
-const Icon = createSvgIcon(Svg, 'A');
+const Icon = createSvgIcon(Svg, "A");
 Icon.Svg = Svg;
 
 export default Icon;

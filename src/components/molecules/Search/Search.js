@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
-import { SearchIcon } from '../icons';
+import { SearchIcon } from "../../icons";
 
-import { pxToEm } from '../../styles/utils/converters';
-import colors from '../../styles/colorPalette';
+import { pxToEm } from "../../../styles/utils/converters";
+import colors from "../../../styles/colorPalette";
 
 const SearchWrapper = styled.div`
   align-items: center;
@@ -69,6 +69,6 @@ Search.propTypes = {
 };
 Search.defaultProps = {
   color: colors.text.white.hex,
-}
+};
 
 export default Search;

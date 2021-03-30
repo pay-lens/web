@@ -4,18 +4,18 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
-import Logo from "../Logo/Logo";
-import Button from "../Button/Button";
-import Search from "../Search/Search";
-import MobileNav from "../MobileNav/MobileNav";
+import Logo from "../../atoms/Logo/Logo";
+import Button from "../../atoms/Button/Button";
+import Search from "../../molecules/Search/Search";
+import MobileNav from "../../molecules/MobileNav/MobileNav";
 
-import { pxToEm } from "../../styles/utils/converters";
-import { boxShadow, createTransitionForProperties } from "../../styles/utils/mixins";
-import colors from "../../styles/colorPalette";
+import { pxToEm } from "../../../styles/utils/converters";
+import { boxShadow, createTransitionForProperties } from "../../../styles/utils/mixins";
+import colors from "../../../styles/colorPalette";
 
-import useScroll from "../../hooks/useScroll";
-import useWindowSize from "../../hooks/useWindowSize";
-import usePrefersDarkMode from "../../hooks/usePrefersDarkMode";
+import useScroll from "../../../hooks/useScroll";
+import useWindowSize from "../../../hooks/useWindowSize";
+import usePrefersDarkMode from "../../../hooks/usePrefersDarkMode";
 
 const innerHeight = 50;
 const outerHeight = 80;
@@ -162,8 +162,8 @@ const GlobalHeader = () => {
             <Nav>
               <ul>
                 <li>
-                  <Link href="/salary">
-                    <a className={pathname === "/salary" ? "active" : ""}>Salary</a>
+                  <Link href="/salaries">
+                    <a className={pathname === "/salaries" ? "active" : ""}>Salaries</a>
                   </Link>
                 </li>
                 <li>

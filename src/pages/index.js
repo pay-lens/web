@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import Button from "../components/Button/Button";
-import Search from "../components/Search/Search";
+import Button from "../components/atoms/Button/Button";
+import Search from "../components/molecules/Search/Search";
 
 import {
   AimIcon,

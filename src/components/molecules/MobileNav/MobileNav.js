@@ -1,18 +1,18 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import FontAwesomeIcon from '../icons/FontAwesomeIcon/FontAwesomeIcon';
-import Button from '../Button/Button';
-import Search from '../Search/Search';
-import Chevron from '../icons/custom/Chevron/Chevron';
+import FontAwesomeIcon from "../../icons/FontAwesomeIcon/FontAwesomeIcon";
+import Button from "../../atoms/Button/Button";
+import Search from "../Search/Search";
+import { ChevronIcon } from "../../icons";
 
-import colors from '../../styles/colorPalette';
-import { pxToEm } from '../../styles/utils/converters';
-import { createTransitionForProperties } from '../../styles/utils/mixins';
+import colors from "../../../styles/colorPalette";
+import { pxToEm } from "../../../styles/utils/converters";
+import { createTransitionForProperties } from "../../../styles/utils/mixins";
 
-import useScroll from '../../hooks/useScroll';
-import useToggle from '../../hooks/useToggle';
-import useWindowSize from '../../hooks/useWindowSize';
-import usePrefersDarkMode from '../../hooks/usePrefersDarkMode';
+import useScroll from "../../../hooks/useScroll";
+import useToggle from "../../../hooks/useToggle";
+import useWindowSize from "../../../hooks/useWindowSize";
+import usePrefersDarkMode from "../../../hooks/usePrefersDarkMode";
 
 const Theme = {
   light: {
@@ -23,7 +23,7 @@ const Theme = {
     background: colors.teal.hex,
     color: colors.text.white.hex,
   },
-}
+};
 
 const Slide = styled.div`
   background: ${({ background }) => background};
@@ -39,7 +39,7 @@ const Slide = styled.div`
   transform: translateX(100%);
   visibility: hidden;
   width: 80%;
-  ${createTransitionForProperties(['transform', 'opacity', 'visibility'])};
+  ${createTransitionForProperties(["transform", "opacity", "visibility"])};
 
   &.visible {
     transform: translateX(0);
@@ -63,7 +63,7 @@ const Nav = styled.nav`
       min-height: ${pxToEm(44)};
       padding: ${pxToEm(20)} 10%;
       width: 100%;
-      ${createTransitionForProperties(['background', 'font-weight'])};
+      ${createTransitionForProperties(["background", "font-weight"])};
 
       :hover {
         background: rgba(${colors.black.rgb}, 0.1);
@@ -89,7 +89,7 @@ const MobileNav = ({ top }) => {
   const { scrollY, scrollDirection } = useScroll();
 
   const { width } = useWindowSize();
-  const theme = usePrefersDarkMode() ? 'dark' : 'light';
+  const theme = usePrefersDarkMode() ? "dark" : "light";
 
   const themeStyles = Theme[theme];
 
@@ -97,33 +97,19 @@ const MobileNav = ({ top }) => {
 
   return (
     <>
-      <Search
-        placeholder="Search Salaries"
-        color={themeStyles.color}
-      />
+      <Search placeholder="Search Salaries" color={themeStyles.color} />
 
       <div>
         <Button variant="tertiary" onClick={toggleIsVisible}>
-          <FontAwesomeIcon
-            icon={(isVisible) ? 'times' : 'bars'}
-            size="lg"
-          />
+          <FontAwesomeIcon icon={isVisible ? "times" : "bars"} size="lg" />
         </Button>
 
-        <Slide
-          className={(isVisible) ? 'visible' : ''}
-          background={themeStyles.background}
-          top={top}
-        >
+        <Slide className={isVisible ? "visible" : ""} background={themeStyles.background} top={top}>
           <ButtonGroup>
             <Button variant="primary" type="button">
               Sign Up
             </Button>
-            <Button
-              color={themeStyles.color}
-              variant="tertiary"
-              type="button"
-            >
+            <Button color={themeStyles.color} variant="tertiary" type="button">
               Sign In
             </Button>
           </ButtonGroup>
@@ -132,19 +118,19 @@ const MobileNav = ({ top }) => {
               <li>
                 <a href="">
                   <span>Salary</span>
-                  <Chevron />
+                  <ChevronIcon />
                 </a>
               </li>
               <li>
                 <a href="">
                   <span>Rank</span>
-                  <Chevron />
+                  <ChevronIcon />
                 </a>
               </li>
               <li>
                 <a href="">
                   <span>Jobs</span>
-                  <Chevron />
+                  <ChevronIcon />
                 </a>
               </li>
             </ul>
