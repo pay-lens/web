@@ -7,6 +7,8 @@ import { v4 as uuid } from "uuid";
 const LocationSearchInput = () => {
   const [address, setAddress] = useState("");
 
+  const GoogleApiUrl = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&libraries=places`;
+
   const handleSelect = (address) => {
     geocodeByAddress(address)
       .then((results) => getLatLng(results[0]))
@@ -17,7 +19,7 @@ const LocationSearchInput = () => {
   return (
     <>
       <Head>
-        <script src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_API_KEY}&libraries=places`}></script>
+        <script src={GoogleApiUrl}></script>
       </Head>
 
       <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect}>
