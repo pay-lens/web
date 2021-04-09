@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import Head from "next/head";
+import Input from "../../atoms/Input/Input";
 
 import { v4 as uuid } from "uuid";
 
@@ -25,7 +26,7 @@ const LocationSearchInput = () => {
       <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect}>
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
-            <input
+            <Input
               {...getInputProps({
                 placeholder: "Search Places ...",
                 className: "location-search-input",
