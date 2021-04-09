@@ -68,7 +68,6 @@ const Section = styled.section`
  * The first section of the landing page.
  */
 const Cta = styled(Section)`
-  color: ${colors.text.white.hex};
   padding-top: ${pxToEm(100)};
   padding-bottom: ${pxToEm(150)};
   position: relative;
@@ -76,6 +75,12 @@ const Cta = styled(Section)`
   h1,
   h2 {
     margin-bottom: 0.5em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: ${colors.text.white.hex};
   }
 
   ::after {
@@ -173,8 +178,12 @@ const WorthSection = styled(Section)`
  * The fourth section of the landing page.
  */
 const JobSenseSection = styled(Section)`
-  color: ${colors.text.white.hex};
   position: relative;
+
+  h1,
+  p {
+    color: ${colors.text.white.hex};
+  }
 
   ::before {
     background: url("/assets/JobSense.png");

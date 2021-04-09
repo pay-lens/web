@@ -11,7 +11,6 @@ const Footer = styled.footer`
   background: ${colors.teal.hex};
   background: linear-gradient(180deg, #094d63 20%, ${colors.teal.hex} 55%, #052935 95%);
   box-shadow: 0 2px 15px 1px rgba(${colors.black.rgb}, 0.5);
-  color: ${colors.white.hex};
   display: grid;
   grid-template-areas:
     "logo nav"
@@ -24,6 +23,13 @@ const Footer = styled.footer`
     display: inline-block;
     color: ${colors.white.hex};
     padding: ${pxToEm(3)};
+  }
+
+  p,
+  strong,
+  small,
+  a {
+    color: ${colors.white.hex};
   }
 
   @media only screen and (max-width: 1200px) {
@@ -86,11 +92,15 @@ const NoticeList = styled.ul`
   align-items: center;
   border-top: 1px solid ${colors.white.hex};
   display: flex;
-  font-size: ${pxToEm(12)};
   grid-area: privacy;
 
   li:not(:first-child) {
     margin-left: ${pxToEm(20)};
+  }
+
+  a,
+  p {
+    font-size: ${pxToEm(12)};
   }
 
   @media only screen and (max-width: 700px) {
@@ -174,7 +184,9 @@ const GlobalFooter = () => (
       <li>
         <a href="">Sitemap</a>
       </li>
-      <li>Support: support@worthaware.com</li>
+      <li>
+        <p>Support: support@worthaware.com</p>
+      </li>
     </NoticeList>
 
     <p>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { set } from "lodash";
 
 import Button from "../../components/atoms/Button/Button";
 import LocationSearchInput from "../../components/molecules/LocationSearchInput/LocationSearchInput";
@@ -36,10 +37,10 @@ const SalaryInputPage = () => {
 
     // Compensation
     compensation: {
-      total: 0,
-      salary: 0,
-      stocks: 0,
-      bonus: 0,
+      total: "",
+      salary: "",
+      stocks: "",
+      bonus: "",
     },
 
     // Optional
@@ -52,13 +53,25 @@ const SalaryInputPage = () => {
   const updateFieldValues = (event) => {
     const {
       dataset: { key },
+      type,
       value,
     } = event.target;
 
-    setFieldValues({
-      ...fieldValues,
-      [key]: value,
-    });
+    if (value === "") {
+      return;
+    }
+
+    let newValue = `${value}`;
+
+    // Format number values to be comma separated
+    if (value !== "" && key.includes("compensation")) {
+      newValue = Number(newValue.replace(/\D/g, "")).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    }
+
+    const newFieldValues = { ...fieldValues };
+    set(newFieldValues, key, newValue);
+
+    setFieldValues(newFieldValues);
   };
 
   const submitForm = (event) => {
@@ -112,18 +125,30 @@ const SalaryInputPage = () => {
             label="Total Yearly Compensation"
             data-key="compensation.total"
             onChange={updateFieldValues}
-            type="number"
-            value={fieldValues.compensation}
+            type="text"
+            value={fieldValues.compensation.total}
           />
-          <Input label="Salary (yearly)" data-key="compensation.salary" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
+          <Input
+            label="Salary (yearly)"
+            data-key="compensation.salary"
+            onChange={updateFieldValues}
+            type="text"
+            value={fieldValues.compensation.salary}
+          />
           <Input
             label="Stock Grant (yearly)"
             data-key="compensation.stocks"
             onChange={updateFieldValues}
-            type="number"
-            value={fieldValues.compensation}
+            type="text"
+            value={fieldValues.compensation.stocks}
           />
-          <Input label="Bonus (avg/year)" data-key="compensation.bonus" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
+          <Input
+            label="Bonus (avg/year)"
+            data-key="compensation.bonus"
+            onChange={updateFieldValues}
+            type="text"
+            value={fieldValues.compensation.bonus}
+          />
         </section>
 
         <section>
