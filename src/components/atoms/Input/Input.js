@@ -1,9 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { v4 as uuid } from "uuid";
 
 import { pxToEm } from "../../../styles/utils/converters";
 
-const InputGroup = ({ id, label, name, placeholder, type, value, ...rest }) => {
+const InputGroup = ({ id, label, name, onChange, placeholder, type, value, ...rest }) => {
+  const [inputValue, setInputValue] = useState(value);
+  const inputId = id || uuid();
   const inputHeight = pxToEm(44);
   const inputPaddingX = pxToEm(10);
   const inputPaddingY = pxToEm(4);
@@ -38,16 +41,25 @@ const InputGroup = ({ id, label, name, placeholder, type, value, ...rest }) => {
     outline: none;
     width: 100%;
 
-    &:focus + label {
+    &:focus + label,
+    &:valid + label {
       font-size: 0.8em;
       transform: translateY(calc((1em + ${inputPaddingY}) * -1));
     }
   `;
 
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+
+    if (onChange && typeof onChange === "function") {
+      onChange(event);
+    }
+  };
+
   return (
     <Group>
-      <Input id={id} name={name || label} placeholder={placeholder || label} type={type || "text"} value={value} {...rest} />
-      <Label htmlFor={id}>{label}</Label>
+      <Input id={inputId} name={name || label || placeholder} type={type || "text"} onChange={handleChange} value={inputValue} required {...rest} />
+      <Label htmlFor={inputId}>{label || placeholder}</Label>
     </Group>
   );
 };
