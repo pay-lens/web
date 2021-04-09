@@ -50,11 +50,14 @@ const SalaryInputPage = () => {
   });
 
   const updateFieldValues = (event) => {
-    const { name, value } = event.target;
+    const {
+      dataset: { key },
+      value,
+    } = event.target;
 
     setFieldValues({
       ...fieldValues,
-      [name]: value,
+      [key]: value,
     });
   };
 
@@ -70,8 +73,8 @@ const SalaryInputPage = () => {
             <h3>Company Information</h3>
           </header>
 
-          <Input label="Company" key="company" onChange={updateFieldValues} type="text" value={fieldValues.company} />
-          <Input label="Level" key="level" onChange={updateFieldValues} type="text" value={fieldValues.level} />
+          <Input label="Company" data-key="company" onChange={updateFieldValues} type="text" value={fieldValues.company} />
+          <Input label="Level" data-key="level" onChange={updateFieldValues} type="text" value={fieldValues.level} />
         </section>
 
         <section>
@@ -79,19 +82,25 @@ const SalaryInputPage = () => {
             <h3>Details &amp; Experience</h3>
           </header>
 
-          <Input label="Title" key="title" onChange={updateFieldValues} type="text" value={fieldValues.title} />
-          <Input label="Job Family" key="jobFamily" onChange={updateFieldValues} type="text" value={fieldValues.jobFamily} />
-          <Input label="Tag" key="tag" onChange={updateFieldValues} type="text" value={fieldValues.tag} />
-          <Input label="Years of Experience" key="yearsExperience" onChange={updateFieldValues} type="number" value={fieldValues.yearsExperience} />
-          <Input label="Years at Company" key="yearsCompany" onChange={updateFieldValues} type="number" value={fieldValues.yearsCompany} />
+          <Input label="Title" data-key="title" onChange={updateFieldValues} type="text" value={fieldValues.title} />
+          <Input label="Job Family" data-key="jobFamily" onChange={updateFieldValues} type="text" value={fieldValues.jobFamily} />
+          <Input label="Tag" data-key="tag" onChange={updateFieldValues} type="text" value={fieldValues.tag} />
+          <Input
+            label="Years of Experience"
+            data-key="yearsExperience"
+            onChange={updateFieldValues}
+            type="number"
+            value={fieldValues.yearsExperience}
+          />
+          <Input label="Years at Company" data-key="yearsCompany" onChange={updateFieldValues} type="number" value={fieldValues.yearsCompany} />
 
           <div>
             <label>
               <span>Location</span>
-              <LocationSearchInput key="location" name="location" onChange={updateFieldValues} value={fieldValues.location} />
+              <LocationSearchInput data-key="location" name="location" onChange={updateFieldValues} value={fieldValues.location} />
             </label>
           </div>
-          <Input label="Remote" key="isRemote" onChange={updateFieldValues} type="checkbox" value={fieldValues.isRemote} />
+          <Input label="Remote" data-key="isRemote" onChange={updateFieldValues} type="checkbox" value={fieldValues.isRemote} />
         </section>
 
         <section>
@@ -101,14 +110,20 @@ const SalaryInputPage = () => {
 
           <Input
             label="Total Yearly Compensation"
-            key="compensation.total"
+            data-key="compensation.total"
             onChange={updateFieldValues}
             type="number"
             value={fieldValues.compensation}
           />
-          <Input label="Salary (yearly)" key="compensation.salary" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
-          <Input label="Stock Grant (yearly)" key="compensation.stocks" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
-          <Input label="Bonus (avg/year)" key="compensation.bonus" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
+          <Input label="Salary (yearly)" data-key="compensation.salary" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
+          <Input
+            label="Stock Grant (yearly)"
+            data-key="compensation.stocks"
+            onChange={updateFieldValues}
+            type="number"
+            value={fieldValues.compensation}
+          />
+          <Input label="Bonus (avg/year)" data-key="compensation.bonus" onChange={updateFieldValues} type="number" value={fieldValues.compensation} />
         </section>
 
         <section>
@@ -116,13 +131,13 @@ const SalaryInputPage = () => {
             <h3>Optional Information</h3>
           </header>
 
-          <Input label="Gender" key="gender" onChange={updateFieldValues} type="number" value={fieldValues.gender} />
-          <Input label="Race" key="race" onChange={updateFieldValues} type="number" value={fieldValues.race} />
-          <Input label="Highest Academic Level" key="academicLevel" onChange={updateFieldValues} type="number" value={fieldValues.academicLevel} />
+          <Input label="Gender" data-key="gender" onChange={updateFieldValues} type="text" value={fieldValues.gender} />
+          <Input label="Race" data-key="race" onChange={updateFieldValues} type="text" value={fieldValues.race} />
+          <Input label="Highest Academic Level" data-key="academicLevel" onChange={updateFieldValues} type="text" value={fieldValues.academicLevel} />
           <div>
             <label>
               <span>Other</span>
-              <textarea key="notes" name="Notes" onChange={updateFieldValues} placeholder="Additional Notes" value={fieldValues.notes} />
+              <textarea data-key="notes" name="Notes" onChange={updateFieldValues} placeholder="Additional Notes" value={fieldValues.notes} />
             </label>
           </div>
         </section>
