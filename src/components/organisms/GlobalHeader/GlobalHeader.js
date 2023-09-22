@@ -46,10 +46,10 @@ const Theme = {
 };
 
 const Header = styled.header`
-  ${({ pathname, scrollDirection, scrollY, theme }) => `
+  ${({ $pathname, $scrollDirection, $scrollY, theme }) => `
     align-content: center;
     align-items: center;
-    background: ${pathname === "/" && scrollY < scrollColorHeight ? theme.top.background : theme.scrolled.background};
+    background: ${$pathname === "/" && $scrollY < scrollColorHeight ? theme.top.background : theme.scrolled.background};
     display: flex;
     height: ${pxToEm(innerHeight)};
     justify-content: space-between;
@@ -59,17 +59,17 @@ const Header = styled.header`
     right: 0;
     top: 0;
     transform-origin: top center;
-    transform: ${scrollDirection === "down" && scrollY >= scrollHideHeight ? "translateY(-100%)" : "translateY(0)"};
+    transform: ${$scrollDirection === "down" && $scrollY >= scrollHideHeight ? "translateY(-100%)" : "translateY(0)"};
     z-index: 401;
-    ${scrollY >= scrollColorHeight ? boxShadow() : ""};
+    ${$scrollY >= scrollColorHeight ? boxShadow() : ""};
     ${createTransitionForProperties(["background", "padding", "transform"])};
 
     a {
-      color: ${scrollY < scrollColorHeight ? theme.top.color : theme.scrolled.color};
+      color: ${$scrollY < scrollColorHeight ? theme.top.color : theme.scrolled.color};
     }
 
     svg * {
-      fill: ${scrollY < scrollColorHeight ? theme.top.color : theme.scrolled.color};
+      fill: ${$scrollY < scrollColorHeight ? theme.top.color : theme.scrolled.color};
     }
 
     @media only screen and (max-width: 1200px) {
@@ -87,7 +87,7 @@ const HeaderSpacer = styled.div`
   padding: ${pxToEm(15)} 0;
 `;
 
-const StyledLogo = styled.a`
+const StyledLogo = styled(Link)`
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -147,13 +147,11 @@ const GlobalHeader = () => {
 
   return (
     <>
-      <Header pathname={pathname} scrollDirection={scrollDirection} scrollY={scrollY} theme={themeStyles}>
+      <Header $pathname={pathname} $scrollDirection={scrollDirection} $scrollY={scrollY} theme={themeStyles}>
         <div>
-          <Link href="/">
-            <StyledLogo>
-              <Logo />
-            </StyledLogo>
-          </Link>
+          <StyledLogo href="/">
+            <Logo />
+          </StyledLogo>
           <h1 className="sr-only">WorthAware</h1>
         </div>
 
@@ -162,18 +160,18 @@ const GlobalHeader = () => {
             <Nav>
               <ul>
                 <li>
-                  <Link href="/salaries">
-                    <a className={pathname === "/salaries" ? "active" : ""}>Salaries</a>
+                  <Link href="/salaries" className={pathname === "/salaries" ? "active" : ""}>
+                    Salaries
                   </Link>
                 </li>
                 <li>
-                  <Link href="/rank">
-                    <a className={pathname === "/rank" ? "active" : ""}>Rank</a>
+                  <Link href="/rank" className={pathname === "/rank" ? "active" : ""}>
+                    Rank
                   </Link>
                 </li>
                 <li>
-                  <Link href="/jobs">
-                    <a className={pathname === "/jobs" ? "active" : ""}>Jobs</a>
+                  <Link href="/jobs" className={pathname === "/jobs" ? "active" : ""}>
+                    Jobs
                   </Link>
                 </li>
               </ul>

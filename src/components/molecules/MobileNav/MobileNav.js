@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import FontAwesomeIcon from "../../icons/FontAwesomeIcon/FontAwesomeIcon";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Button from "../../atoms/Button/Button";
 import Search from "../Search/Search";
 import { ChevronIcon } from "../../icons";
@@ -26,7 +26,7 @@ const Theme = {
 };
 
 const Slide = styled.div`
-  background: ${({ background }) => background};
+  background: ${({ $background }) => $background};
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -35,7 +35,7 @@ const Slide = styled.div`
   padding: ${pxToEm(20)} 0;
   position: absolute;
   right: 0;
-  top: ${({ top }) => pxToEm(top)};
+  top: ${({ $top }) => pxToEm($top)};
   transform: translateX(100%);
   visibility: hidden;
   width: 80%;
@@ -95,16 +95,18 @@ const MobileNav = ({ top }) => {
 
   const [isVisible, toggleIsVisible] = useToggle();
 
+  const MenuIcon = () => isVisible ? <FaTimes /> : <FaBars />;
+
   return (
     <>
       <Search placeholder="Search Salaries" color={themeStyles.color} />
 
       <div>
         <Button variant="tertiary" onClick={toggleIsVisible}>
-          <FontAwesomeIcon icon={isVisible ? "times" : "bars"} size="lg" />
+          <MenuIcon size="lg" />
         </Button>
 
-        <Slide className={isVisible ? "visible" : ""} background={themeStyles.background} top={top}>
+        <Slide className={isVisible ? "visible" : ""} $background={themeStyles.background} $top={top}>
           <ButtonGroup>
             <Button variant="primary" type="button">
               Sign Up
