@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../../atoms/Logo/Logo";
+import Logo from '../../../assets/brand/paylens-logo-white.svg';
 
 import { pxToEm } from "../../../styles/utils/converters";
 import { createTransitionForProperties } from "../../../styles/utils/mixins";

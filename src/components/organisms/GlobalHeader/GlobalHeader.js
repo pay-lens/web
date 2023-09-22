@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 
 import Link from "next/link";
-import Logo from "../../atoms/Logo/Logo";
+
 import Button from "../../atoms/Button/Button";
 import Search from "../../molecules/Search/Search";
 import MobileNav from "../../molecules/MobileNav/MobileNav";
+
+import Logo from '../../../assets/brand/paylens-logo-white.svg';
 
 import { pxToEm } from "../../../styles/utils/converters";
 import { boxShadow, createTransitionForProperties } from "../../../styles/utils/mixins";
@@ -17,8 +19,8 @@ import useScroll from "../../../hooks/useScroll";
 import useWindowSize from "../../../hooks/useWindowSize";
 import usePrefersDarkMode from "../../../hooks/usePrefersDarkMode";
 
-const innerHeight = 50;
-const outerHeight = 80;
+const innerHeight = 80;
+const outerHeight = innerHeight + 30;
 const scrollColorHeight = outerHeight + 30;
 const scrollHideHeight = outerHeight + 20;
 
