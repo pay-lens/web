@@ -121,7 +121,7 @@ const GlobalFooter = () => (
       <a href="/">
         <StyledLogo />
       </a>
-      <h1 className="sr-only">WorthAware</h1>
+      <h1 className="sr-only">PayLens</h1>
     </LogoWrapper>
 
     <Nav>
@@ -185,12 +185,12 @@ const GlobalFooter = () => (
         <a href="">Sitemap</a>
       </li>
       <li>
-        <p>Support: support@worthaware.com</p>
+        <p>Support: support@paylens.com</p>
       </li>
     </NoticeList>
 
     <p>
-      <small className="caption">&copy; 2021 WorthAware</small>
+      <small className="caption">&copy; 2021 PayLens</small>
     </p>
   </Footer>
 );

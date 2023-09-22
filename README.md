@@ -1,13 +1,13 @@
-# WorthAware
+# PayLens
 
 | | |
 | -: | - |
-| CodeClimate | [![Maintainability](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/maintainability)](https://codeclimate.com/github/WorthAware/paylens-next/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/test_coverage)](https://codeclimate.com/github/WorthAware/paylens-next/test_coverage) |
-| Snyk | [![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/WorthAware/paylens-next?targetFile=package.json) |
+| CodeClimate | [![Maintainability](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/maintainability)](https://codeclimate.com/github/pay-lens/web/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/40f15deabe0d3238ca56/test_coverage)](https://codeclimate.com/github/pay-lens/web/test_coverage) |
+| Snyk | [![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json)](https://snyk.io/test/github/pay-lens/web?targetFile=package.json) |
 | Social | [![Twitter Follow](https://img.shields.io/twitter/follow/AwareWorth?label=Follow&style=social)](https://twitter.com/AwareWorth) |
 
 ## Contents
-- [WorthAware](#worthaware)
+- [PayLens](#paylens)
   - [Contents](#contents)
   - [Technologies](#technologies)
     - [Languages](#languages)
@@ -66,4 +66,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Contact
 
-[<img alt="Slack" src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" />](https://worthaware.slack.com)
+[<img alt="Slack" src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" />](https://paylens.slack.com)

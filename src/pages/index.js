@@ -362,7 +362,7 @@ const IconContainer = styled.div`
 `;
 
 /**
- * The landing page, which displays generic information about WorthAware.
+ * The landing page, which displays generic information about PayLens.
  *
  * @public
  */
@@ -522,7 +522,7 @@ const App = () => (
       </header>
 
       <p>
-        Research salaries by company, job title and location. Sign up with WorthAware to get a personalized review of your worth and get matched to
+        Research salaries by company, job title and location. Sign up with PayLens to get a personalized review of your worth and get matched to
         higher paying jobs.
       </p>
 

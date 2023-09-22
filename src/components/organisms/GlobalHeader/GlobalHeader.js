@@ -154,7 +154,7 @@ const GlobalHeader = () => {
           <StyledLogo href="/">
             <Logo />
           </StyledLogo>
-          <h1 className="sr-only">WorthAware</h1>
+          <h1 className="sr-only">PayLens</h1>
         </div>
 
         {width >= 840 ? (
